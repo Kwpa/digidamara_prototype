@@ -6,6 +6,3 @@ Thumbs.db
 
 # Vendors
 node_modules/
-
-# Build
-# leave out: dist
