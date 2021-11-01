@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Phaser 3 TypeScript Digidamara Prototype</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="/css/wickedcss.css">
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      div.scrollingfeed{
+        overflow-x: hidden;
+        overflow-y: auto;
+        max-height: 400px
+      }
+      img.lessOpacity {
+        opacity: 0.2;
+        filter: alpha(opacity=20);
+        zoom: 1;  /* needed to trigger "hasLayout" in IE if no width or height is set */
+      }
+
+    /* The animation code */
+    @keyframes example {
+      from {background-color: red;}
+      to {background-color: yellow;}
+    }
+
+    /* The element to apply the animation to */
+    div.animated {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      animation-name: example;
+      animation-duration: 4s;
+    }
+    </style>
+
+    <!---
+    Note: have to add def for exorts in order to ake production build work :
+    see issue https://stackoverflow.com/questions/43042889/typescript-referenceerror-exports-is-not-defined
+    --->
+    <script>var exports = {};</script>
+
+    <script type="module" src="/src/index.ts"></script>
+
+    <!-- <script defer>
+      let tabsWithContent = (function () {
+        let tabs = document.querySelectorAll('.tabs li');
+        let tabsContent = document.querySelectorAll('.tab-content');
+
+        let deactvateAllTabs = function () {
+          tabs.forEach(function (tab) {
+            tab.classList.remove('is-active');
+          });
+        };
+
+        let hideTabsContent = function () {
+          tabsContent.forEach(function (tabContent) {
+            tabContent.classList.remove('is-active');
+          });
+        };
+
+        let activateTabsContent = function (tab) {
+          tabsContent[getIndex(tab)].classList.add('is-active');
+        };
+
+        let getIndex = function (el) {
+          return [...el.parentElement.children].indexOf(el);
+        };
+
+        tabs.forEach(function (tab) {
+          tab.addEventListener('click', function () {
+            deactvateAllTabs();
+            hideTabsContent();
+            tab.classList.add('is-active');
+            activateTabsContent(tab);
+          });
+        })
+
+        tabs[0].click();
+      })();
+    </script> -->
+
+  </head>
+  <body>
+
+    <div id="game"></div>
+    <div id="phaser-container"></div>
+  </body>
+</html>
