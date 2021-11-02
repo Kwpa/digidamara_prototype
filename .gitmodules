@@ -1,4 +1,1 @@
-[submodule "dist"]
-	path = dist
-	url = https://github.com/Kwpa/digidamara_prototype
-	branch = deploy
+
