@@ -44,6 +44,21 @@ const Panel = (text = 'Todo', coupleID = 'A + B') => {
           </div>
         </div>
 
+        <div class="level">
+          <div class="level-item has-text-centered">
+            <div class="notification is-warning">
+              <p class="heading">Clicks</p>
+              <p id="clicksText" class="title">0</p>
+            </div>
+          </div>
+          <div class="level-item has-text-centered">
+            <div class="notification is-warning">
+              <p class="heading">Fame</p>
+              <p id="fameText" class="title">0</p>
+            </div>
+          </div>
+        </div>
+
       </div>
 
       <div class='columns'>
@@ -55,19 +70,22 @@ const Panel = (text = 'Todo', coupleID = 'A + B') => {
                   <td>
                     <figure class='image'>
                       <progress class='progress is-large' value='15' max='100'></progress>
-                      <img src="https://i.pinimg.com/originals/08/d6/32/08d632c6672e852506b78bb22e23b25f.gif" class='heartbeat'></img>
+                      <img id="team" src="https://i.pinimg.com/originals/08/d6/32/08d632c6672e852506b78bb22e23b25f.gif" class='heartbeat'></img>
+                      <div class="title" style="text-align: center;">Team A</div>
                     </figure>
                   </td>
                   <td>
                     <figure class='image'>
                       <progress class='progress is-large' value='25' max='100'></progress>
-                      <img src="https://i.pinimg.com/originals/08/d6/32/08d632c6672e852506b78bb22e23b25f.gif"></img>
+                      <img id="team" src="https://i.pinimg.com/originals/08/d6/32/08d632c6672e852506b78bb22e23b25f.gif"></img>
+                      <div class="title" style="text-align: center;">Team B</div>
                     </figure>
                   </td>
                   <td>
                     <figure class='image'>
                       <progress class='progress is-large' value='5' max='100'></progress>
-                      <img src="https://i.pinimg.com/originals/08/d6/32/08d632c6672e852506b78bb22e23b25f.gif" class='heartbeat'></img>
+                      <img id="team" src="https://i.pinimg.com/originals/08/d6/32/08d632c6672e852506b78bb22e23b25f.gif" class='heartbeat'></img>
+                      <div class="title" style="text-align: center;">Team C</div>
                     </figure>
                   </td>
                 </tr>
@@ -75,19 +93,22 @@ const Panel = (text = 'Todo', coupleID = 'A + B') => {
                   <td>
                     <figure class='image'>
                       <progress class='progress is-large' value='75' max='100'></progress>
-                      <img src="https://i.pinimg.com/originals/08/d6/32/08d632c6672e852506b78bb22e23b25f.gif" class='pulse'></img>
+                      <img id="team" src="https://i.pinimg.com/originals/08/d6/32/08d632c6672e852506b78bb22e23b25f.gif" class='pulse'></img>
+                      <div class="title" style="text-align: center;">Team D</div>
                     </figure>
                   </td>
                   <td>
                     <figure class='image'>
                       <progress class='progress is-large' value='100' max='100'></progress>
-                      <img src="https://i.pinimg.com/originals/08/d6/32/08d632c6672e852506b78bb22e23b25f.gif" class='pulse'></img>
+                      <img id="team" src="https://i.pinimg.com/originals/08/d6/32/08d632c6672e852506b78bb22e23b25f.gif" class='pulse'></img>
+                      <div class="title" style="text-align: center;">Team E</div>
                     </figure>
                   </td>
                   <td>
                     <figure class='image'>
                       <progress class='progress is-large' value='20' max='100'></progress>
-                      <img src="https://i.pinimg.com/originals/08/d6/32/08d632c6672e852506b78bb22e23b25f.gif" class='heartbeat'></img>
+                      <img id="team" src="https://i.pinimg.com/originals/08/d6/32/08d632c6672e852506b78bb22e23b25f.gif" class='heartbeat'></img>
+                      <div class="title" style="text-align: center;">Team F</div>
                     </figure>
                   </td>
                 </tr>
@@ -95,19 +116,22 @@ const Panel = (text = 'Todo', coupleID = 'A + B') => {
                   <td>
                     <figure class='image'>
                       <progress class='progress is-large' value='90' max='100'></progress>
-                      <img src="https://i.pinimg.com/originals/08/d6/32/08d632c6672e852506b78bb22e23b25f.gif" class='floater'></img>
+                      <img id="team" src="https://i.pinimg.com/originals/08/d6/32/08d632c6672e852506b78bb22e23b25f.gif" class='floater'></img>
+                      <div class="title" style="text-align: center;">Team G</div>
                     </figure>
                   </td>
                   <td>
                     <figure class='image'>
                       <progress class='progress is-large' value='40' max='100'></progress>
-                      <img src="https://i.pinimg.com/originals/08/d6/32/08d632c6672e852506b78bb22e23b25f.gif" class='wiggle'></img>
+                      <img id="team" src="https://i.pinimg.com/originals/08/d6/32/08d632c6672e852506b78bb22e23b25f.gif" class='wiggle'></img>
+                      <div class="title" style="text-align: center;">Team H</div>
                     </figure>
                   </td>
                   <td>
                     <figure class='image'>
                       <progress class='progress is-large' value='55' max='100'></progress>
-                      <img src="https://i.pinimg.com/originals/08/d6/32/08d632c6672e852506b78bb22e23b25f.gif" class='pulse'></img>
+                      <img id="team" src="https://i.pinimg.com/originals/08/d6/32/08d632c6672e852506b78bb22e23b25f.gif" class='pulse'></img>
+                      <div class="title" style="text-align: center;">Team I</div>
                     </figure>
                   </td>
                 </tr>
@@ -126,7 +150,7 @@ const Panel = (text = 'Todo', coupleID = 'A + B') => {
           <div id='insertnewitems' class='scrollingfeed'></div>
         </div>
       </div>
-      </div>
+    </div>
   )
 }
 

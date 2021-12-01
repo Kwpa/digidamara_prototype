@@ -10,7 +10,8 @@ export default {
   dom: {
     createContainer: true
   },
-  backgroundColor: '#FFFF00',
+  //backgroundColor: '#FFFF00',
+  transparent: true,
   scale: {
     width: '100%',
     height: '100%',

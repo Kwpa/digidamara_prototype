@@ -4,16 +4,23 @@ import FeedItem from './FeedItem';
 import {Client} from "@heroiclabs/nakama-js";
 import Tabs from './Tabs';
 
+let clicksLeft = 10;
+const fameLeft = 0;
+const clickIncreaseRate = 0.003;
+const fameIncreaseRate = 1;
+
 export default class CSSTestScene extends Phaser.Scene
 {
-
-  feedcount;
 
   constructor() {
     super('css-scene')
   }
 
   preload() {
+    this.load.image('button1', 'assets/button.jpg');
+    this.load.image('spark0', 'assets/sparkle1.png');
+    this.load.audio('music-1', ['assets/yourethetop.mp3']);
+    this.load.audio('ding', ['assets/ding.mp3']);
   }
 
   create() //to tackle - server code and setup for typescript!
@@ -71,11 +78,44 @@ export default class CSSTestScene extends Phaser.Scene
       console.log(response.payload);
     }
 
-
-
     let { width, height } = this.sys.game.canvas
     console.log(width)
     console.log('css-demo-scene')
+
+    const game = document.getElementsByTagName('canvas')[0]
+    game.style.setProperty('position', 'absolute');
+    //game.style.setProperty('pointer-events', 'none');
+
+    const music = this.sound.add('music-1', {loop: true});
+    const ding = this.sound.add('ding', {loop: false});
+    music.setVolume(0.1);
+    music.play();
+
+    var emitter0 = this.add.particles('spark0').createEmitter({
+        x: 400,
+        y: 300,
+        speed: { min: -800, max: 800 },
+        angle: { min: 0, max: 360 },
+        scale: { start: 0.2, end: 0 },
+        blendMode: 'SCREEN',
+        on: false,
+        lifespan: 600,
+        gravityY: 1800
+    });
+
+    this.input.on('pointerdown', function (pointer) {
+      if(clicksLeft >= 1)
+      {
+        emitter0.setPosition(pointer.x, pointer.y);
+        emitter0.on = true;
+        emitter0.explode();
+        ding.setVolume(0.05);
+        ding.play();
+        let element = document.elementsFromPoint(pointer.x, pointer.y)[1];
+        console.log(element);
+        element.click();
+      }
+    });
 
     // const button = document.createElement('div')
     // button.className = "button is-primary is-large"
@@ -98,6 +138,9 @@ export default class CSSTestScene extends Phaser.Scene
 
     const thing = this.add.dom(width/2,0, Panel('Press here', 'Hall and Burty') as HTMLElement)
 
+    //const img = this.add.image(900, 100, 'button1')
+
+
     //p[0].style.setProperty('value', val0);
     //thing.setOrigin(0.5, 0.5)
     // var style = thing.node.style;
@@ -111,6 +154,8 @@ export default class CSSTestScene extends Phaser.Scene
     const notification = thing.getChildByName('mainNotification')
     const emailField = thing.getChildByName('emailField')
     const passwordField = thing.getChildByName('passwordField')
+    const teams = thing.node.querySelectorAll('#team');
+    console.log("clicked couple" + teams.length);
 
     // CLOSE BUTTON
     // close.onclick = () => {
@@ -143,6 +188,35 @@ export default class CSSTestScene extends Phaser.Scene
       authenticatePlayer(emailField.value, passwordField.value);
     }
 
+    //clicksLeft = 0;
+    //fameLeft = 0;
+    const clicksCounter = document.getElementById('clicksText');
+    const fameCounter = document.getElementById('fameText');
+
+    for(var i=0; i< teams.length; i++)
+    {
+      const el = teams[i]
+      teams[i].onclick = () => {
+        const progBar = el.previousSibling;
+        if(clicksLeft>= 1)
+        {
+          if(progBar.value > 3)
+          {
+            console.log("clicked couple 1 " + clicksLeft);
+            progBar.value += 5;
+            if(clicksLeft<1)
+            {
+              clicksLeft = 0;
+            }
+            else
+            {
+              clicksLeft -= 1;
+            }
+          }
+        }
+      }
+    }
+
     // <button name='press' class="button is-primary is-large">
     //   <span>{ text }</span>
     // </button>
@@ -160,6 +234,8 @@ export default class CSSTestScene extends Phaser.Scene
     // style.width = '400px'
     // tabs.updateSize()
 
+    thing.setPosition(width/2, thing.height/2)
+
     this.scale.on('resize', (gameSize, baseSize, displaySize, resolution) =>
     {
       console.log(gameSize)
@@ -174,19 +250,27 @@ export default class CSSTestScene extends Phaser.Scene
 
   }
 
-  resize = (gameSize, baseSize, displaySize, resolution) =>
-  {
-      var width = gameSize.width;
-      var height = gameSize.height;
-
-      this.cameras.resize(width, height);
-
-      this.bg.setSize(width, height);
-      this.logo.setPosition(width / 2, height / 2);
-  }
+  // resize = (gameSize, baseSize, displaySize, resolution) =>
+  // {
+  //     var width = gameSize.width;
+  //     var height = gameSize.height;
+  //
+  //     this.cameras.resize(width, height);
+  //
+  //     this.bg.setSize(width, height);
+  //     this.logo.setPosition(width / 2, height / 2);
+  // }
 
   update()
   {
+    clicksLeft += clickIncreaseRate;
+    var clicksLeftRounded = Math.floor(clicksLeft);
+
+    const clicksCounter = document.getElementById('clicksText');
+    const fameCounter = document.getElementById('fameText');
+    clicksText.innerHTML = clicksLeftRounded.toString();
+    fameText.innerHTML = fameLeft.toString();;
+
     var val0 = 0.03;
     var elements = document.getElementsByClassName('progress');
 
@@ -211,6 +295,8 @@ export default class CSSTestScene extends Phaser.Scene
         }
         else if(elements[i].value <=3)
         {
+          // if possible lose life! Go back to 50% health.
+
           elements[i].className = 'progress';
           elements[i].parentNode.childNodes[1].className = 'lessOpacity'
         }
