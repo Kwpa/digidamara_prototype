@@ -4,10 +4,15 @@ import FeedItem from './FeedItem';
 import {Client} from "@heroiclabs/nakama-js";
 import Tabs from './Tabs';
 
-let clicksLeft = 10;
-const fameLeft = 0;
-const clickIncreaseRate = 0.003;
-const fameIncreaseRate = 1;
+let clicksLeft = 20;
+let fameLeft = 0;
+let clickIncreaseRate = 0.003;
+let fameIncreaseRate = 0.01;
+let pointerClickPositionX;
+let pointerClickPositionY;
+let clickBoostAmount = 5;
+let fameBoostAmount = 5;
+let healthBoostAmount = 5;
 
 export default class CSSTestScene extends Phaser.Scene
 {
@@ -18,15 +23,31 @@ export default class CSSTestScene extends Phaser.Scene
 
   preload() {
     this.load.image('button1', 'assets/button.jpg');
-    this.load.image('spark0', 'assets/sparkle1.png');
+    this.load.image('spark1', 'assets/sparkle1.png');
+    this.load.image('spark2', 'assets/sparkle2.png');
     this.load.audio('music-1', ['assets/yourethetop.mp3']);
-    this.load.audio('ding', ['assets/ding.mp3']);
+    this.load.audio('ding1', ['assets/ding1.mp3']);
+    this.load.audio('ding2', ['assets/ding2.mp3']);
+    this.load.audio('empty1', ['assets/empty1.mp3']);
   }
 
   create() //to tackle - server code and setup for typescript!
   {
     var useSSL = false; // Enable if server is run with an SSL certificate.
     var client = new Client("defaultkey", "127.0.0.1", "7350", useSSL);
+
+    function MakeTextHidden(textObject)
+    {
+        textObject.visible = false;
+    }
+    function MakeTextVisible(textObject)
+    {
+        textObject.visible = true;
+    }
+    function DestroyText(textObject)
+    {
+        textObject.destroy();
+    }
 
     async function connectToServer(session)
     {
@@ -87,11 +108,29 @@ export default class CSSTestScene extends Phaser.Scene
     //game.style.setProperty('pointer-events', 'none');
 
     const music = this.sound.add('music-1', {loop: true});
-    const ding = this.sound.add('ding', {loop: false});
+    const ding1 = this.sound.add('ding1', {loop: false});
+    const ding2 = this.sound.add('ding2', {loop: false});
+    const empty1 = this.sound.add('empty1', {loop: false});
+
     music.setVolume(0.1);
     music.play();
+    this.sound.pauseOnBlur = false;
 
-    var emitter0 = this.add.particles('spark0').createEmitter({
+
+
+    var emitter1 = this.add.particles('spark1').createEmitter({
+        x: 400,
+        y: 300,
+        speed: { min: -800, max: 800 },
+        angle: { min: 0, max: 360 },
+        scale: { start: 0.2, end: 0 },
+        blendMode: 'SCREEN',
+        on: false,
+        lifespan: 600,
+        gravityY: 1800
+    });
+
+    var emitter2 = this.add.particles('spark2').createEmitter({
         x: 400,
         y: 300,
         speed: { min: -800, max: 800 },
@@ -104,13 +143,10 @@ export default class CSSTestScene extends Phaser.Scene
     });
 
     this.input.on('pointerdown', function (pointer) {
-      if(clicksLeft >= 1)
+      if(clicksLeft >= 0)
       {
-        emitter0.setPosition(pointer.x, pointer.y);
-        emitter0.on = true;
-        emitter0.explode();
-        ding.setVolume(0.05);
-        ding.play();
+        pointerClickPositionX = pointer.x;
+        pointerClickPositionY = pointer.y;
         let element = document.elementsFromPoint(pointer.x, pointer.y)[1];
         console.log(element);
         element.click();
@@ -196,21 +232,79 @@ export default class CSSTestScene extends Phaser.Scene
     for(var i=0; i< teams.length; i++)
     {
       const el = teams[i]
+      const num = i;
       teams[i].onclick = () => {
         const progBar = el.previousSibling;
-        if(clicksLeft>= 1)
+        if(clicksLeft>= 0)
         {
           if(progBar.value > 3)
           {
-            console.log("clicked couple 1 " + clicksLeft);
-            progBar.value += 5;
             if(clicksLeft<1)
             {
-              clicksLeft = 0;
+              empty1.setVolume(0.2);
+              empty1.play();
             }
             else
             {
+              progBar.value += healthBoostAmount;
               clicksLeft -= 1;
+              if(num == 0)
+              {
+                fameLeft += fameBoostAmount;
+                var gameRect = teams[num].getBoundingClientRect();
+                var xCentre = gameRect.left + (gameRect.right-gameRect.left)/2;
+                var yCentre = gameRect.bottom + (gameRect.top-gameRect.bottom)/2;
+                const teamFameTextEmit = this.add.text(-2000,-2000, "fameTextEmit", {fontSize: '32px', fill: '#fff', boundsAlignH: "center", boundsAlignV: "middle"});
+                teamFameTextEmit.setStroke('#2d2d2d', 16);
+                teamFameTextEmit.setPosition(xCentre, yCentre);
+                teamFameTextEmit.setText("+" + fameBoostAmount + " Entropy");
+                this.tweens.add({
+                    targets: teamFameTextEmit,
+                    y: yCentre-30,
+                    alpha: 0.5,
+                    duration: 500,
+                    ease: 'Linear',
+                    yoyo: false,
+                    onComplete: ()=>{DestroyText(teamFameTextEmit)}
+                });
+                //this.time.delayedCall(500, ()=>{DestroyText(teamFameTextEmit)}, this);
+                emitter2.setPosition(pointerClickPositionX, pointerClickPositionY);
+                emitter2.on = true;
+                emitter2.explode();
+                emitter2.explode();
+                emitter2.explode();
+                emitter2.explode();
+                emitter2.explode();
+                ding2.setVolume(0.05);
+                ding2.play();
+              }
+              else
+              {
+
+                fameLeft += 1;
+                var gameRect = teams[num].getBoundingClientRect();
+                var xCentre = gameRect.left + (gameRect.right-gameRect.left)/2;
+                var yCentre = gameRect.bottom + (gameRect.top-gameRect.bottom)/2;
+                const teamFameTextEmit = this.add.text(-2000,-2000, "fameTextEmit", {fontSize: '32px', fill: '#fff', boundsAlignH: "center", boundsAlignV: "middle"});
+                teamFameTextEmit.setStroke('#2d2d2d', 16);
+                teamFameTextEmit.setPosition(xCentre, yCentre);
+                teamFameTextEmit.setText("+" + 1 + " Entropy");
+                this.tweens.add({
+                    targets: teamFameTextEmit,
+                    y: yCentre-30,
+                    alpha: 0.5,
+                    duration: 500,
+                    ease: 'Linear',
+                    yoyo: false,
+                    onComplete: ()=>{DestroyText(teamFameTextEmit)}
+                });
+
+                emitter1.setPosition(pointerClickPositionX, pointerClickPositionY);
+                emitter1.on = true;
+                emitter1.explode();
+                ding1.setVolume(0.05);
+                ding1.play();
+              }
             }
           }
         }
@@ -264,15 +358,43 @@ export default class CSSTestScene extends Phaser.Scene
   update()
   {
     clicksLeft += clickIncreaseRate;
+
     var clicksLeftRounded = Math.floor(clicksLeft);
 
     const clicksCounter = document.getElementById('clicksText');
     const fameCounter = document.getElementById('fameText');
+    const clicksBox = document.getElementById('clicksBox');
+    const fameBox = document.getElementById('fameBox');
     clicksText.innerHTML = clicksLeftRounded.toString();
-    fameText.innerHTML = fameLeft.toString();;
+
+
+    if(clicksLeft < 1)
+    {
+      clicksBox.className = "notification is-danger";
+    }
+    else
+    {
+      clicksBox.className = "notification is-warning";
+    }
+
+    if(fameLeft < 1)
+    {
+      fameBox.className = "notification is-danger";
+    }
+    else
+    {
+      fameBox.className = "notification is-warning";
+    }
 
     var val0 = 0.03;
     var elements = document.getElementsByClassName('progress');
+
+    if(elements[0].value > 3)
+    {
+      fameLeft += fameIncreaseRate;
+    }
+    var fameLeftRounded = Math.floor(fameLeft);
+    fameText.innerHTML = fameLeftRounded.toString();;
 
     for(var i=0; i< elements.length; i++)
     {

@@ -6,8 +6,8 @@ const Panel = (text = 'Todo', coupleID = 'A + B') => {
     <div>
       <div class='section'>
 
-        <div class='content'>
-          <h1>Digidamara Prototype Larger Larger Larger Larger larger Larger</h1>
+        <div class='content' >
+          <h1 class='has-text-white'>Digidamara Prototype Larger Larger Larger Larger larger Larger</h1>
         </div>
 
         <div class='level'>
@@ -46,14 +46,14 @@ const Panel = (text = 'Todo', coupleID = 'A + B') => {
 
         <div class="level">
           <div class="level-item has-text-centered">
-            <div class="notification is-warning">
-              <p class="heading">Clicks</p>
+            <div id="clicksBox" class="notification is-warning">
+              <p class="title">Clicks</p>
               <p id="clicksText" class="title">0</p>
             </div>
           </div>
           <div class="level-item has-text-centered">
-            <div class="notification is-warning">
-              <p class="heading">Fame</p>
+            <div id="fameBox" class="notification is-warning">
+              <p class="title">Entropy</p>
               <p id="fameText" class="title">0</p>
             </div>
           </div>
@@ -69,24 +69,69 @@ const Panel = (text = 'Todo', coupleID = 'A + B') => {
                 <tr>
                   <td>
                     <figure class='image'>
-                      <progress class='progress is-large' value='15' max='100'></progress>
+                      <progress class='progress is-large' value='65' max='100'></progress>
                       <img id="team" src="https://i.pinimg.com/originals/08/d6/32/08d632c6672e852506b78bb22e23b25f.gif" class='heartbeat'></img>
-                      <div class="title" style="text-align: center;">Team A</div>
+
                     </figure>
+                    <div class="level">
+                      <div class="level-item mx-0">
+                        <span class="icon is-large has-text-info">
+                          <i class="fas fa-star fa-2x"></i>
+                        </span>
+                      </div>
+                      <div class="level-item mx-0">
+                        <div class="title" style="text-align: center;">Team A</div>
+                      </div>
+                      <div class="level-item mx-0">
+                        <span class="icon is-large has-text-info">
+                          <i class="fas fa-star fa-2x"></i>
+                        </span>
+                      </div>
+                    </div>
                   </td>
                   <td>
                     <figure class='image'>
                       <progress class='progress is-large' value='25' max='100'></progress>
                       <img id="team" src="https://i.pinimg.com/originals/08/d6/32/08d632c6672e852506b78bb22e23b25f.gif"></img>
-                      <div class="title" style="text-align: center;">Team B</div>
+
                     </figure>
+                    <div class="level">
+                      <div class="level-item mx-0">
+                        <span class="icon is-large">
+                          <i class="fas fa-circle fa-2x"></i>
+                        </span>
+                      </div>
+                      <div class="level-item mx-0">
+                        <div class="title" style="text-align: center;">Team B</div>
+                      </div>
+                      <div class="level-item mx-0">
+                        <span class="icon is-large">
+                          <i class="fas fa-circle fa-2x"></i>
+                        </span>
+                      </div>
+                    </div>
                   </td>
                   <td>
                     <figure class='image'>
                       <progress class='progress is-large' value='5' max='100'></progress>
                       <img id="team" src="https://i.pinimg.com/originals/08/d6/32/08d632c6672e852506b78bb22e23b25f.gif" class='heartbeat'></img>
-                      <div class="title" style="text-align: center;">Team C</div>
+
                     </figure>
+                    <div class="level">
+                      <div class="level-item mx-0">
+                        <span class="icon is-large">
+                          <i class="fas fa-circle fa-2x"></i>
+                        </span>
+                      </div>
+                      <div class="level-item mx-0">
+                        <div class="title" style="text-align: center;">Team C</div>
+                      </div>
+                      <div class="level-item mx-0">
+                        <span class="icon is-large">
+                          <i class="fas fa-circle fa-2x"></i>
+                        </span>
+                      </div>
+                    </div>
                   </td>
                 </tr>
                 <tr>
@@ -94,22 +139,67 @@ const Panel = (text = 'Todo', coupleID = 'A + B') => {
                     <figure class='image'>
                       <progress class='progress is-large' value='75' max='100'></progress>
                       <img id="team" src="https://i.pinimg.com/originals/08/d6/32/08d632c6672e852506b78bb22e23b25f.gif" class='pulse'></img>
-                      <div class="title" style="text-align: center;">Team D</div>
+
                     </figure>
+                    <div class="level">
+                      <div class="level-item mx-0">
+                        <span class="icon is-large">
+                          <i class="fas fa-circle fa-2x"></i>
+                        </span>
+                      </div>
+                      <div class="level-item mx-0">
+                        <div class="title" style="text-align: center;">Team D</div>
+                      </div>
+                      <div class="level-item mx-0">
+                        <span class="icon is-large">
+                          <i class="fas fa-circle fa-2x"></i>
+                        </span>
+                      </div>
+                    </div>
                   </td>
                   <td>
                     <figure class='image'>
                       <progress class='progress is-large' value='100' max='100'></progress>
                       <img id="team" src="https://i.pinimg.com/originals/08/d6/32/08d632c6672e852506b78bb22e23b25f.gif" class='pulse'></img>
-                      <div class="title" style="text-align: center;">Team E</div>
+
                     </figure>
+                    <div class="level">
+                      <div class="level-item mx-0">
+                        <span class="icon is-large">
+                          <i class="fas fa-circle fa-2x"></i>
+                        </span>
+                      </div>
+                      <div class="level-item mx-0">
+                        <div class="title" style="text-align: center;">Team E</div>
+                      </div>
+                      <div class="level-item mx-0">
+                        <span class="icon is-large">
+                          <i class="fas fa-circle fa-2x"></i>
+                        </span>
+                      </div>
+                    </div>
                   </td>
                   <td>
                     <figure class='image'>
                       <progress class='progress is-large' value='20' max='100'></progress>
                       <img id="team" src="https://i.pinimg.com/originals/08/d6/32/08d632c6672e852506b78bb22e23b25f.gif" class='heartbeat'></img>
-                      <div class="title" style="text-align: center;">Team F</div>
+
                     </figure>
+                    <div class="level">
+                      <div class="level-item mx-0">
+                        <span class="icon is-large">
+                          <i class="fas fa-circle fa-2x"></i>
+                        </span>
+                      </div>
+                      <div class="level-item mx-0">
+                        <div class="title" style="text-align: center;">Team F</div>
+                      </div>
+                      <div class="level-item mx-0">
+                        <span class="icon is-large">
+                          <i class="fas fa-circle fa-2x"></i>
+                        </span>
+                      </div>
+                    </div>
                   </td>
                 </tr>
                 <tr>
@@ -117,22 +207,67 @@ const Panel = (text = 'Todo', coupleID = 'A + B') => {
                     <figure class='image'>
                       <progress class='progress is-large' value='90' max='100'></progress>
                       <img id="team" src="https://i.pinimg.com/originals/08/d6/32/08d632c6672e852506b78bb22e23b25f.gif" class='floater'></img>
-                      <div class="title" style="text-align: center;">Team G</div>
+
                     </figure>
+                    <div class="level">
+                      <div class="level-item mx-0">
+                        <span class="icon is-large">
+                          <i class="fas fa-circle fa-2x"></i>
+                        </span>
+                      </div>
+                      <div class="level-item mx-0">
+                        <div class="title" style="text-align: center;">Team G</div>
+                      </div>
+                      <div class="level-item mx-0">
+                        <span class="icon is-large">
+                          <i class="fas fa-circle fa-2x"></i>
+                        </span>
+                      </div>
+                    </div>
                   </td>
                   <td>
                     <figure class='image'>
                       <progress class='progress is-large' value='40' max='100'></progress>
                       <img id="team" src="https://i.pinimg.com/originals/08/d6/32/08d632c6672e852506b78bb22e23b25f.gif" class='wiggle'></img>
-                      <div class="title" style="text-align: center;">Team H</div>
+
                     </figure>
+                    <div class="level">
+                      <div class="level-item mx-0">
+                        <span class="icon is-large">
+                          <i class="fas fa-circle fa-2x"></i>
+                        </span>
+                      </div>
+                      <div class="level-item mx-0">
+                        <div class="title" style="text-align: center;">Team H</div>
+                      </div>
+                      <div class="level-item mx-0">
+                        <span class="icon is-large">
+                          <i class="fas fa-circle fa-2x"></i>
+                        </span>
+                      </div>
+                    </div>
                   </td>
                   <td>
                     <figure class='image'>
                       <progress class='progress is-large' value='55' max='100'></progress>
                       <img id="team" src="https://i.pinimg.com/originals/08/d6/32/08d632c6672e852506b78bb22e23b25f.gif" class='pulse'></img>
-                      <div class="title" style="text-align: center;">Team I</div>
+
                     </figure>
+                    <div class="level">
+                      <div class="level-item mx-0">
+                        <span class="icon is-large">
+                          <i class="fas fa-circle fa-2x"></i>
+                        </span>
+                      </div>
+                      <div class="level-item mx-0">
+                        <div class="title" style="text-align: center;">Team I</div>
+                      </div>
+                      <div class="level-item mx-0">
+                        <span class="icon is-large">
+                          <i class="fas fa-circle fa-2x"></i>
+                        </span>
+                      </div>
+                    </div>
                   </td>
                 </tr>
               </tbody>
