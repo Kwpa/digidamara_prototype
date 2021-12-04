@@ -74,12 +74,13 @@ Buttons
 	icon class:shadowed
 	tooltip origin:bottom
 	tooltip class:red
+  on clickTeam:yield 1 spark
 	on click:
 		log You are awesome
 		do clickTeam with team1Button
     log logit 2
 	end
-	on clickTeam:yield 1 spark
+
 
 /*Buildings
   *energyGen
