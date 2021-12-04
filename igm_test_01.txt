@@ -77,10 +77,10 @@ Buttons
 	on click:
 		log You are awesome
 		do clickTeam with team1Button
+    log logit 2
 	end
 	on clickTeam:
 		yield 1 spark
-		lose 1 energy
 	end
 
 /*Buildings
