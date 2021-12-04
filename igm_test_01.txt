@@ -39,7 +39,7 @@ Layout
     class:fullWidth
   *buttons
     contains:Buttons
-  *store
+/*  *store
     contains:buildings, upgrades
   *buildings
     contains:BulkDisplay, Buildings
@@ -49,7 +49,7 @@ Layout
     contains:Upgrades
     header:Upgrade Your Structures Below!
     costs:hide
-    names:hide
+    names:hide */
 
 Resources
   *energy
@@ -80,9 +80,10 @@ Buttons
 		lose 1 energy
 	end
 
-Buildings
+/*Buildings
   *energyGen
     name:Energy generator
     desc:Generating Energy!
     on tick:yield 1 energy
     unlocked
+*/
