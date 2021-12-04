@@ -74,7 +74,10 @@ Buttons
 	icon class:shadowed
 	tooltip origin:bottom
 	tooltip class:red
-	on click:log You are awesome
+	on click:
+		log You are awesome
+		do clickTeam
+	end
 	on clickTeam:
 		yield 1 spark
 		lose 1 energy
