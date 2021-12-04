@@ -74,11 +74,12 @@ Buttons
 	icon class:shadowed
 	tooltip origin:bottom
 	tooltip class:red
-  on clickTeam:yield 1 sparks
+  on clickTeam:
+yield 2 sparks
 	on click:
-		log You are awesome
-		do clickTeam with team1Button
-    log logit 2
+	log You are awesome
+	do clickTeam with team1Button
+  log logit 2
 	end
 
 
