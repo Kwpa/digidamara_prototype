@@ -76,7 +76,7 @@ Buttons
 	tooltip class:red
 	on click:
 		log You are awesome
-		do clickTeam
+		do clickTeam with team1Button
 	end
 	on clickTeam:
 		yield 1 spark
