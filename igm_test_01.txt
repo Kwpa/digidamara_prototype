@@ -74,8 +74,7 @@ Buttons
 	icon class:shadowed
 	tooltip origin:bottom
 	tooltip class:red
-  on clickTeam:
-yield 2 sparks
+  on clickTeam:yield 2 sparks
 	on click:
 	log You are awesome
 	do clickTeam with team1Button
