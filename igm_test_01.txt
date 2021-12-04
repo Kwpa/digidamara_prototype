@@ -80,9 +80,10 @@ Buttons
 		lose 1 energy
 	end
 
-Buildings
+/*Buildings
   *energyGen
     name:Energy generator
     desc:Generating Energy!
     on tick:yield 1 energy
     unlocked
+*/
