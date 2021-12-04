@@ -1,6 +1,7 @@
 import Phaser from 'phaser';
 import Panel from './Panel';
 import FeedItem from './FeedItem';
+import Modal from './Modal';
 import {Client} from "@heroiclabs/nakama-js";
 import Tabs from './Tabs';
 
@@ -148,7 +149,7 @@ export default class CSSTestScene extends Phaser.Scene
         pointerClickPositionX = pointer.x;
         pointerClickPositionY = pointer.y;
         let element = document.elementsFromPoint(pointer.x, pointer.y)[1];
-        console.log(element);
+        //console.log(element);
         element.click();
       }
     });
@@ -172,8 +173,19 @@ export default class CSSTestScene extends Phaser.Scene
     //   });
     // });
 
-    const thing = this.add.dom(width/2,0, Panel('Press here', 'Hall and Burty') as HTMLElement)
 
+    const thing = this.add.dom(width/2,0, Panel('Press here', 'Hall and Burty') as HTMLElement);
+    var modal = Modal() as HTMLElement;
+    document.body.appendChild(modal);
+    const modal1 = document.getElementById('modal1');
+    const modalCloseElements = document.querySelectorAll('#modalClose');
+    for(i = 0; i < modalCloseElements.length; i++)
+    {
+      modalCloseElements[i].onclick = () => {
+      console.log("close modal");
+      modal1.className = "modal";
+      }
+    }
     //const img = this.add.image(900, 100, 'button1')
 
 
@@ -191,7 +203,9 @@ export default class CSSTestScene extends Phaser.Scene
     const emailField = thing.getChildByName('emailField')
     const passwordField = thing.getChildByName('passwordField')
     const teams = thing.node.querySelectorAll('#team');
-    console.log("clicked couple" + teams.length);
+    const teamNames = thing.node.querySelectorAll('#teamName');
+
+
 
     // CLOSE BUTTON
     // close.onclick = () => {
@@ -308,6 +322,10 @@ export default class CSSTestScene extends Phaser.Scene
             }
           }
         }
+      }
+      teamNames[i].onclick = () => {
+        console.log("modal please");
+        modal1.className = "modal is-active";
       }
     }
 

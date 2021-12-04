@@ -1,0 +1,15 @@
+{
+  "teamsData": {
+    "id": "teams01",
+    "teams": [
+      {"name": "Team A"},
+      {"name": "Team B"},
+      {"name": "Team C"},
+      {"name": "Team D"},
+      {"name": "Team E"},
+      {"name": "Team F"},
+      {"name": "Team G"},
+      {"name": "Team H"},
+      {"name": "Team I"},
+    ]
+}}

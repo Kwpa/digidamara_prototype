@@ -73,7 +73,7 @@ const Panel = (text = 'Todo', coupleID = 'A + B') => {
                       <img id="team" src="https://i.pinimg.com/originals/08/d6/32/08d632c6672e852506b78bb22e23b25f.gif" class='heartbeat'></img>
 
                     </figure>
-                    <div class="level">
+                    <div id="teamName" class="level">
                       <div class="level-item mx-0">
                         <span class="icon is-large has-text-info">
                           <i class="fas fa-star fa-2x"></i>
@@ -95,7 +95,7 @@ const Panel = (text = 'Todo', coupleID = 'A + B') => {
                       <img id="team" src="https://i.pinimg.com/originals/08/d6/32/08d632c6672e852506b78bb22e23b25f.gif"></img>
 
                     </figure>
-                    <div class="level">
+                    <div id="teamName" class="level">
                       <div class="level-item mx-0">
                         <span class="icon is-large">
                           <i class="fas fa-circle fa-2x"></i>
@@ -117,7 +117,7 @@ const Panel = (text = 'Todo', coupleID = 'A + B') => {
                       <img id="team" src="https://i.pinimg.com/originals/08/d6/32/08d632c6672e852506b78bb22e23b25f.gif" class='heartbeat'></img>
 
                     </figure>
-                    <div class="level">
+                    <div id="teamName" class="level">
                       <div class="level-item mx-0">
                         <span class="icon is-large">
                           <i class="fas fa-circle fa-2x"></i>
@@ -141,7 +141,7 @@ const Panel = (text = 'Todo', coupleID = 'A + B') => {
                       <img id="team" src="https://i.pinimg.com/originals/08/d6/32/08d632c6672e852506b78bb22e23b25f.gif" class='pulse'></img>
 
                     </figure>
-                    <div class="level">
+                    <div id="teamName" class="level">
                       <div class="level-item mx-0">
                         <span class="icon is-large">
                           <i class="fas fa-circle fa-2x"></i>
@@ -163,7 +163,7 @@ const Panel = (text = 'Todo', coupleID = 'A + B') => {
                       <img id="team" src="https://i.pinimg.com/originals/08/d6/32/08d632c6672e852506b78bb22e23b25f.gif" class='pulse'></img>
 
                     </figure>
-                    <div class="level">
+                    <div id="teamName" class="level">
                       <div class="level-item mx-0">
                         <span class="icon is-large">
                           <i class="fas fa-circle fa-2x"></i>
@@ -185,7 +185,7 @@ const Panel = (text = 'Todo', coupleID = 'A + B') => {
                       <img id="team" src="https://i.pinimg.com/originals/08/d6/32/08d632c6672e852506b78bb22e23b25f.gif" class='heartbeat'></img>
 
                     </figure>
-                    <div class="level">
+                    <div id="teamName" class="level">
                       <div class="level-item mx-0">
                         <span class="icon is-large">
                           <i class="fas fa-circle fa-2x"></i>
@@ -209,7 +209,7 @@ const Panel = (text = 'Todo', coupleID = 'A + B') => {
                       <img id="team" src="https://i.pinimg.com/originals/08/d6/32/08d632c6672e852506b78bb22e23b25f.gif" class='floater'></img>
 
                     </figure>
-                    <div class="level">
+                    <div id="teamName" class="level">
                       <div class="level-item mx-0">
                         <span class="icon is-large">
                           <i class="fas fa-circle fa-2x"></i>
@@ -231,7 +231,7 @@ const Panel = (text = 'Todo', coupleID = 'A + B') => {
                       <img id="team" src="https://i.pinimg.com/originals/08/d6/32/08d632c6672e852506b78bb22e23b25f.gif" class='wiggle'></img>
 
                     </figure>
-                    <div class="level">
+                    <div id="teamName" class="level">
                       <div class="level-item mx-0">
                         <span class="icon is-large">
                           <i class="fas fa-circle fa-2x"></i>
@@ -253,7 +253,7 @@ const Panel = (text = 'Todo', coupleID = 'A + B') => {
                       <img id="team" src="https://i.pinimg.com/originals/08/d6/32/08d632c6672e852506b78bb22e23b25f.gif" class='pulse'></img>
 
                     </figure>
-                    <div class="level">
+                    <div id="teamName" class="level">
                       <div class="level-item mx-0">
                         <span class="icon is-large">
                           <i class="fas fa-circle fa-2x"></i>
