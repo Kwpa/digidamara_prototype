@@ -73,6 +73,7 @@ Includes
     if (time=[%schedtime] and chance([%prob]%)=1)
     log [%eventname]: [%message]
     end
+    end
 
 Resources
 
@@ -85,7 +86,6 @@ Resources
   *storetext1
     name:storeithere
     [i:fxconcattoname %astring="hello" %bstring="goodbye!"]
-    hidden
 
   *energy
     name:Energy
