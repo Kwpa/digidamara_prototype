@@ -65,13 +65,13 @@ Includes
     name:[%astring] [%bstring]
     end
 */
-  *include event %schedtime
+  *include event %schedtime %eventname %amessage %bmessage %prob="100%"
     on tick:
       if (time=[%schedtime])
-        if (chance(50%)=1)
-          log We won
+        if (chance([prob])=1)
+          log [%eventname][amessage]
         else
-          log We lost
+          log [%eventname][bmessage]
         end
       end
     end
@@ -81,12 +81,10 @@ Resources
   *textlog0
 
   *time
-    //on tick:yield 1 time
-    //[i:event %schedtime=3 %eventname="event1" %message="this cool event" %prob="100"]
     on tick:
       yield 1 time
     end
-    [i:event %schedtime="3"]
+    [i:event %schedtime="3" %eventname="event1" %amessage="this cool event" %bmessage="this rare event" %prob="50%"]
 /*  on tick:
       if (this>2.5 and this<3.5)
         if (chance(50%)=1)
