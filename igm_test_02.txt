@@ -30,16 +30,19 @@ CSS
   {
     position:absolute;
     top:100px;
+    left:20%
   }
   .team2
   {
     position:absolute;
     top:100px;
+    left:50%
   }
   .team3
   {
     position:absolute;
     top:100px;
+    left:80%
   }
 
 Layout
