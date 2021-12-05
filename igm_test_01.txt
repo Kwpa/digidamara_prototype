@@ -52,10 +52,6 @@ Layout
     names:hide */
 
 Includes
-  *include event %schedtime %eventname %message %prob
-    if(time==[%schedtime] and chance([%prob]%) == 1)
-    log [%eventname]: [%message]
-
   *include concat %astring %bstring
     log [%astring] [%bstring]
 
@@ -69,21 +65,21 @@ Includes
     name:[%astring] [%bstring]
     end
 
-
+  *include event %schedtime %eventname %message %prob
+    if(time==[%schedtime] and chance([%prob]%) == 1)
+    log [%eventname]: [%message]
 
 Resources
   *time
     on tick:
-      yield 1 time
-      log time [this]
-    end
+    yield 1 time
     //[i:event %schedtime=3 %eventname="event1" %message="this cool event" %prob="100"]
-    //end
+    end
 
   *storetext1
     name:storeithere
-    //[i:fxconcattoname %astring="hello" %bstring="goodbye!"]
-
+    [i:fxconcattoname %astring="hello" %bstring="goodbye!"]
+    hidden
 
   *energy
     name:Energy
