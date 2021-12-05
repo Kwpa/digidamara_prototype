@@ -84,7 +84,7 @@ Resources
     //[i:event %schedtime=3 %eventname="event1" %message="this cool event" %prob="100"]
     on tick:
     yield 1 time
-    if (this>2.5 and this<3.5) log Hey you!
+    if (this>2.5 and this<3.5 and chance(100)=1) log Hey you!
     end
 
   *storetext1
