@@ -57,7 +57,7 @@ Includes
     log [%astring] [%bstring]
 
   *include fxplus %existingfx="start" %thing="this" %astring %bstring
-    on [%exisitingfx]:
+    on [%existingfx]:
     do customfx with [%thing]
     end
     on customeffect:
