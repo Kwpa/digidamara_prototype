@@ -56,7 +56,9 @@ Includes
   *include concat %astring %bstring
     log [%astring] [%bstring]
 
-  *include fxplus %existingfx="start" %thing="this" %astring %bstring
+    //[i:concat %astring="20" %bstring="hello"]
+
+  *include fxconcattoname %existingfx="start" %thing="this" %astring %bstring
     on [%existingfx]:
     do customfx with [%thing]
     end
@@ -64,20 +66,17 @@ Includes
     name:[%astring] [%bstring]
     end
 
-
 Resources
 
   *storetext1
     name:storeithere
-    [i:fxplus %astring="hello" %bstring="goodbye"]
+    [i:fxconcattoname %astring="hello" %bstring="goodbye"]
 
   *energy
     name:Energy
     desc:Give your energy to the teams
     on start:
   		start with:10
-  		log You are awesome!
-      [i:concat %astring="20" %bstring="hello"]
   	end
 
   *spark|sparks
