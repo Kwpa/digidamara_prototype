@@ -79,7 +79,11 @@ Buttons
   yield 2 sparks
   lose 1 energy
   log logit 2
-	end
+  do maketheteam with team1Button
+  end
+  on maketheteam:
+  yield 100 sparks
+  end
 
 
 /*Buildings
