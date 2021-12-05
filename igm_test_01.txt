@@ -56,24 +56,24 @@ Includes
   *include concat %astring %bstring
     log [%astring] [%bstring]
 
-  *include state %inc="start" %id %bstring
-    on [%inc]:
-    do dump with [%id]
+  *include fxplus %existingfx="start" %thing="this" %astring %bstring
+    on [%exisitingfx]:
+    do customfx with [%thing]
     end
-    on dump:
-    text:[%bstring]
+    on customeffect:
+    name:[%astring] [%bstring]
     end
 
 
 Resources
 
-  *storetext
+  *storetext1
     name:storeithere
+    [i:fxplus %astring="hello" %bstring="goodbye"]
 
   *energy
     name:Energy
     desc:Give your energy to the teams
-    [i:state %id="this" %bstring="wee"]
     on start:
   		start with:10
   		log You are awesome!
