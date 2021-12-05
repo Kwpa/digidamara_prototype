@@ -53,10 +53,8 @@ Layout
 
 
 Includes
-  *include concat %valueid %anotherid
-    log [%valueid]
-    log [%anotherid]
-    log [%valueid] [%anotherid]
+  *include concat %astring %bstring
+    log [%astring] [%bstring]
 
 Resources
   *energy
@@ -65,7 +63,7 @@ Resources
 	on start:
 		start with:10
 		log You are awesome!
-    [i:concat %valueid="20" %anotherid="hello"]
+    [i:concat %astring="20" %bstring="hello"]
 	end
 
   *spark|sparks
