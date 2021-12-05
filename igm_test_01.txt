@@ -53,7 +53,7 @@ Layout
 
 
 Includes
-  *include concat %value : log [%id]
+  *include concat %value : log [%value]
 
 Resources
   *energy
