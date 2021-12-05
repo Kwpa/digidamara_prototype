@@ -66,8 +66,11 @@ Includes
     end
 
   *include event %schedtime %eventname %message %prob
+    do customevent with this
+    on customevent:
     if (time=[%schedtime] and chance([%prob]%)=1)
     log [%eventname]: [%message]
+    end
 
 Resources
 
