@@ -56,8 +56,8 @@ Includes
   *include concat %astring %bstring
     log [%astring] [%bstring]
 
-  *include state %id %bstring
-    on start:
+  *include state %inc="start" %id %bstring
+    on [%inc]:
     do dump with [%id]
     end
     on dump:
