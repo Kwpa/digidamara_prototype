@@ -67,6 +67,8 @@ Resources
   *team1count
     name:team1count
 
+  *textlog0
+
 Buttons
   *team1button
     name:Team 1
@@ -91,7 +93,7 @@ Buttons
   end
   on click:
   team1count is random(0,6)
-  if (team1count is 0 and textlog0 is 0) 
+  if (team1count is 0 and textlog0 is 0)
   log Text 0
   textlog0 is 1
   end
