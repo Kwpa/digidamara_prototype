@@ -74,7 +74,7 @@ Resources
     on tick:
     yield 1 time
     //[i:event %schedtime=3 %eventname="event1" %message="this cool event" %prob="100"]
-    end
+    //end
 
   *storetext1
     name:storeithere
