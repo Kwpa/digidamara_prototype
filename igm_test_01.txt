@@ -61,7 +61,7 @@ Resources
     desc:Give your energy to the teams!
 	on start:
 		start with:10
-		log You are awesome
+		log You are awesome!
     [i:concat %value1="20" %value2="hello"]
 	end
 
