@@ -53,7 +53,7 @@ Layout
 
 
 Includes
-  *include concat %value : log [%value] [%value]
+  *include concat %value1 %value2: log [%value1] [%value2]
 
 Resources
   *energy
@@ -62,7 +62,7 @@ Resources
 	on start:
 		start with:10
 		log You are awesome
-    [i:concat %value="20"]
+    [i:concat %value1="20" %value1="hello"]
 	end
 
   *spark|sparks
