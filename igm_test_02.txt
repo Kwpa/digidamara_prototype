@@ -107,18 +107,20 @@ Buttons
     icon class:shadowed
     tooltip origin:bottom
     tooltip class:red
-    on click:
-      if (energy>=1)
-        log You are awesome
-        yield 2 sparks
-        lose 1 energy
-        log logit 2
-      end
-    end
+
   *team1button
     name:Team 1
     class:team1
     text:Team 2 ([team1health])
+    on click:
+      if (energy>=1 and team1health>=1)
+        log You are awesome
+        yield 2 sparks
+        yield 5 team1health
+        lose 1 energy
+        log logit 2
+      end
+    end
   *team2button
     name:Team 2
     class:team2
