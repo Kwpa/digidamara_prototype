@@ -58,7 +58,7 @@ Includes
 Resources
   *energy
     name:Energy
-    desc:Give your energy to the teams!
+    desc:Give your energy to the teams
 	on start:
 		start with:10
 		log You are awesome!
