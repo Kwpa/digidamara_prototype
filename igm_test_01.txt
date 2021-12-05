@@ -82,6 +82,7 @@ Buttons
   log logit 2
   do maketheteam with team1button
   end
+  end
   on maketheteam:
   yield 100 sparks
   end
