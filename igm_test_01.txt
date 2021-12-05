@@ -68,7 +68,6 @@ Includes
   *include event %schedtime %eventname %message %prob
     if(time==[%schedtime] and chance([%prob]%) == 1)
     log [%eventname]: [%message]
-    end
 
 Resources
 
