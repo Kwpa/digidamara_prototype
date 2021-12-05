@@ -72,11 +72,11 @@ Includes
 Resources
 
   *textlog0
-  
+
   *time
     on tick:
     yield 1 time
-    //[i:event %schedtime=3 %eventname="event1" %message="this cool event" %prob="100"]
+    [i:event %schedtime=3 %eventname="event1" %message="this cool event" %prob="100"]
     end
 
   *storetext1
