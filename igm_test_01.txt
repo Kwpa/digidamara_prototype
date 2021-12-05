@@ -66,7 +66,6 @@ Resources
 
   *team1logcount
     name:team1logcount
-    hidden:true
 
 Buttons
   *team1button
