@@ -73,7 +73,7 @@ Resources
   *energy
     name:Energy
     desc:Give your energy to the teams
-    [i:state %astring="40" %bstring="weee"]
+    [i:state %astring="40" %bstring="wee"]
     on start:
   		start with:10
   		log You are awesome!
