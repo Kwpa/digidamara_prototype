@@ -56,6 +56,7 @@ Includes
   *include concat %valueid %anotherid
     log [%valueid]
     log [%anotherid]
+    log [%valueid] [%anotherid]
 
 Resources
   *energy
