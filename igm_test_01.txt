@@ -55,7 +55,7 @@ Layout
 Includes
   *include concat %astring %bstring
     log [%astring] [%bstring]
-    
+
   *include combine %astring %bstring
     [%astring] [%bstring]
 
@@ -67,7 +67,7 @@ Resources
 		start with:10
 		log You are awesome!
     [i:concat %astring="20" %bstring="hello"]
-    log [i:combine %astring="33" %bstring="bye"]
+    log [[i:combine %astring="33" %bstring="bye"]]
 	end
 
   *spark|sparks
