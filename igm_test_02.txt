@@ -1,0 +1,87 @@
+Let's make a game!
+  name:Digidamara_1
+  author:BAGEL+BALLOON and friends
+  desc:A game about the end of the universe
+  created:03/12/2021
+  version:1
+
+CSS
+  #box-main
+  {
+  	left:0px;
+  	top:0px;
+  	bottom:0px;
+  	overflow:hidden;
+  	width:100%;
+  	position:absolute;
+    }
+  #box-logBox
+  {
+    top:70%;
+    width:50%;
+    height:30%;
+  }
+
+Layout
+  *logBox
+    contains:Log
+    class:bottom
+
+  *main
+    contains:res, buttons, logBox
+  *res
+    contains:Resources
+    class:fullWidth
+  *buttons
+    contains:Buttons
+
+Includes
+  *include schedevent %schedtime %eventname %amessage %bmessage %prob="100%"
+    on tick:
+      if (eventtime=[%schedtime])
+        if (chance([%prob])=1)
+          log [%eventname] [%amessage]
+        else
+          log [%eventname] [%bmessage]
+        end
+      end
+    end
+
+Resources
+
+  *eventtime
+    on tick:
+      yield 1 eventtime
+    end
+    [i:schedevent %schedtime="2" %eventname="event1" %amessage="this cool event" %bmessage="this rare event" %prob="50%"]
+
+  *energy
+    name:Energy
+    desc:Give your energy to the teams
+    on start:
+  		start with:10
+  	end
+
+  *spark|sparks
+    name:Spark|Sparks
+    desc:Dancers at the end of the universe generate this!
+
+Buttons
+  *team1button
+    name:Team 1
+    desc:Click Team 1 to generate Sparks, costs Energy
+  	cost:1 energy
+  	icon:stuff/bunny.png
+  	class:bigButton hasFlares
+  	icon class:shadowed
+  	tooltip origin:bottom
+  	tooltip class:red
+
+    on click:
+    	if (energy>=1)
+        log You are awesome
+        yield 2 sparks
+        lose 1 energy
+        log logit 2
+      end
+    end
