@@ -67,7 +67,7 @@ Includes
 */
   *include schedevent %schedtime %eventname %amessage %bmessage %prob="100%"
     on tick:
-      if (time=[%schedtime])
+      if (eventtime=[%schedtime])
         if (chance([%prob])=1)
           log [%eventname] [%amessage]
         else
@@ -78,22 +78,13 @@ Includes
 
 Resources
 
-  *textlog0
-
-  *time
+  *eventtime
     on tick:
       yield 1 time
     end
     [i:schedevent %schedtime="2" %eventname="event1" %amessage="this cool event" %bmessage="this rare event" %prob="50%"]
-/*  on tick:
-      if (this>2.5 and this<3.5)
-        if (chance(50%)=1)
-          log We won
-        else
-          log We lost
-        end
-      end
-    end */
+
+  *textlog0
 
   *storetext1
     name:storeithere
