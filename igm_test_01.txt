@@ -52,10 +52,10 @@ Layout
     names:hide */
 
 Includes
-  *include concat %astring %bstring
+  /* *include concat %astring %bstring
     log [%astring] [%bstring]
 
-    //[i:concat %astring="20" %bstring="hello"]
+    [i:concat %astring="20" %bstring="hello"]
 
   *include fxconcattoname %existingfx="start" %thing="this" %astring %bstring
     on [%existingfx]:
@@ -64,7 +64,7 @@ Includes
     on customeffect:
     name:[%astring] [%bstring]
     end
-
+*/
   *include event %schedtime %eventname %message %prob
     on tick:
     do customevent with this
@@ -89,7 +89,7 @@ Resources
 
   *storetext1
     name:storeithere
-    [i:fxconcattoname %astring="hello" %bstring="goodbye!"]
+    //[i:fxconcattoname %astring="hello" %bstring="goodbye"]
 
   *energy
     name:Energy
