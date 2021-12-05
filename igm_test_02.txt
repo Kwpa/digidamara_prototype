@@ -86,6 +86,11 @@ Resources
       lose 1 team1health
     end
 
+  *team1maxhealth
+    on start:
+      start with:100
+    end
+
   *energy
     name:Energy
     desc:Give your energy to the teams
@@ -111,12 +116,15 @@ Buttons
   *team1button
     name:Team 1
     class:team1
-    text:Team 2 ([team1health])
+    text:Team 2 (HP = [team1health])
     on click:
       if (energy>=1 and team1health>=1)
         log You are awesome
         yield 2 sparks
         yield 5 team1health
+        if (team1health > team1maxhealth)
+          team1health is team1maxhealth
+        end
         lose 1 energy
         log logit 2
       end
