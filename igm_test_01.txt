@@ -75,7 +75,7 @@ Buttons
 	tooltip origin:bottom
 	tooltip class:red
   on click:
-	if(energy>1)
+	if (energy>1)
   log You are awesome
   yield 2 sparks
   lose 1 energy
