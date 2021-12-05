@@ -73,7 +73,7 @@ Resources
 
   *storetext1
     name:storeithere
-    [i:fxconcattoname %astring="hello" %bstring="goodbye"]
+    [i:fxconcattoname %astring="hello" %bstring="goodbye!"]
     hidden
 
   *energy
