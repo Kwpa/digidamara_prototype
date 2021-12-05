@@ -65,7 +65,7 @@ Resources
 	on start:
 		start with:10
 		log You are awesome!
-    [i:concat %astring="20" %bstring="hello"]
+    [i:concat %astring="20" %bstring="helloo"]
     log value is [[i:combine %cstring="3"]].
 	end
 
