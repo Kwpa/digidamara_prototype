@@ -5,6 +5,10 @@ Let's make a game!
   created:03/12/2021
   version:1
 
+Settings
+
+  background:https://t4.ftcdn.net/jpg/02/69/60/01/360_F_269600145_7JkNiBJjUwbweqrfjDAcQQPFYsMK2uE0.jpg
+
 CSS
   #box-main
   {
