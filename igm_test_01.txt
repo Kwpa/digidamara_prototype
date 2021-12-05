@@ -73,7 +73,7 @@ Resources
   *textlog6
 
 Includes
-  *includes concat %str1 %str2 %value : %str1
+  *includes concat %value : %value
 
 Buttons
   *team1button
@@ -100,7 +100,7 @@ Buttons
   on click:
   $rand is random(0,6)
   if ($rand is 0 and textlog0 is 0)
-  log [[i:concat %str1="HALLO " $str2="SIRE"]].
+  log [[i:concat %value="HALLO"]].
   textlog0 is 1
   end
   if ($rand is 1) log Text 1 end
