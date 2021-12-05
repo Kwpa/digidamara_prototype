@@ -58,7 +58,7 @@ Resources
 	on start:
 		start with:10
 		log You are awesome
-    [i:concat $id="hello"]
+    [i:concat %id="hello"]
 	end
 
   *spark|sparks
@@ -74,7 +74,7 @@ Resources
   *textlog6
 
 Includes
-  *include concat $id:
+  *include concat %id:
     log [%id]
 
 Buttons
