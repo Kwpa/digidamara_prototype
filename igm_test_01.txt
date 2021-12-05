@@ -56,11 +56,17 @@ Includes
   *include concat %astring %bstring
     log [%astring] [%bstring]
 
-  *include state %value:%value+3
+  *include state %astring %bstring
+    do dump with [this]
+    on dump:
+      log [%astring] [%bstring]
+    end
+
 
 Resources
 
   *storetext
+    name:storeithere
 
   *energy
     name:Energy
@@ -68,7 +74,7 @@ Resources
 	on start:
 		start with:10
 		log You are awesome!
-    log [i:state %value=3]
+    [i:state %astring="40" %bstring="weee"]
     [i:concat %astring="20" %bstring="hello"]
 	end
 
