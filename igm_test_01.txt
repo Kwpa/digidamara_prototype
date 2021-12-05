@@ -68,7 +68,7 @@ Resources
 	on start:
 		start with:10
 		log You are awesome!
-    [i:concat %astring="20" %bstring="helloo"]
+    [i:concat %astring="20" %bstring="hello"]
     log [i:state %value=3]
 	end
 
