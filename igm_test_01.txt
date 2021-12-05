@@ -64,8 +64,8 @@ Resources
     name:Spark|Sparks
     desc:Dancers at the end of the universe generate this!
 
-  *team1logcount
-    name:team1logcount
+  *team1count
+    name:team1count
 
 Buttons
   *team1button
