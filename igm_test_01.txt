@@ -56,7 +56,7 @@ Includes
   *include concat %astring %bstring
     log [%astring] [%bstring]
 
-  *include state %cstring : %cstring*3
+  *include state %value : %value+3
 
 Resources
 
@@ -69,7 +69,7 @@ Resources
 		start with:10
 		log You are awesome!
     [i:concat %astring="20" %bstring="helloo"]
-    storetext is [i:state %cstring="3"]
+    storetext is [i:state %cstring=3]
 	end
 
   *spark|sparks
