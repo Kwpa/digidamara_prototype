@@ -73,7 +73,7 @@ Resources
   *textlog6
 
 Includes
-  *include multiplyBy3 %value : %value*3
+  *include multiplyBy3 %value:%value*3
 
 Buttons
   *team1button
