@@ -52,7 +52,7 @@ Layout
     names:hide */
 
 Includes
-  /* *include concat %astring %bstring
+/* *include concat %astring %bstring
     log [%astring] [%bstring]
 
     [i:concat %astring="20" %bstring="hello"]
@@ -80,7 +80,7 @@ Resources
 
   *eventtime
     on tick:
-      yield 1 time
+      yield 1 eventtime
     end
     [i:schedevent %schedtime="2" %eventname="event1" %amessage="this cool event" %bmessage="this rare event" %prob="50%"]
 
