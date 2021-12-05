@@ -81,7 +81,15 @@ Resources
 
   *time
     on tick:yield 1 time
-    [i:event %schedtime=3 %eventname="event1" %message="this cool event" %prob="100"]
+    //[i:event %schedtime=3 %eventname="event1" %message="this cool event" %prob="100"]
+    on tick:
+    do customevent with this
+    end
+    on customevent:
+    if (time=3 and chance([%prob]%)=100)
+    log Hey: you
+    end
+    end
 
   *storetext1
     name:storeithere
