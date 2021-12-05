@@ -26,7 +26,17 @@ CSS
     width:50%;
     height:30%;
   }
-  .betterButton
+  .team1
+  {
+    position:absolute;
+    top:100px;
+  }
+  .team2
+  {
+    position:absolute;
+    top:100px;
+  }
+  .team3
   {
     position:absolute;
     top:100px;
@@ -96,7 +106,10 @@ Buttons
     end
   *team1button
     name:Team 1
+    class:team1
   *team2button
     name:Team 2
+    class:team2
   *team3button
     name:Team 3
+    class:team3
