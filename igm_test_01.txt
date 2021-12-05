@@ -67,7 +67,7 @@ Resources
 		start with:10
 		log You are awesome!
     [i:concat %astring="20" %bstring="hello"]
-    log[[i:combine %astring="33" %bstring="bye"]]
+    log value is [[i:combine %astring="33" %bstring="bye"]].
 	end
 
   *spark|sparks
