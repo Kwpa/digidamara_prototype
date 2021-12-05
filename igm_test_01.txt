@@ -51,6 +51,10 @@ Layout
     costs:hide
     names:hide */
 
+
+Includes
+  *include concat %value : log [%id]
+
 Resources
   *energy
     name:Energy
@@ -58,7 +62,7 @@ Resources
 	on start:
 		start with:10
 		log You are awesome
-    [i:concat %id="hello"]
+    [i:concat %value="20"]
 	end
 
   *spark|sparks
@@ -73,9 +77,6 @@ Resources
   *textlog5
   *textlog6
 
-Includes
-  *include concat %id:
-    log [%id]
 
 Buttons
   *team1button
