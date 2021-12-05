@@ -69,9 +69,9 @@ Includes
     on tick:
       if (time=[%schedtime])
         if (chance([%prob])=1)
-          log [%eventname][%amessage]
+          log [%eventname] [%amessage]
         else
-          log [%eventname][%bmessage]
+          log [%eventname] [%bmessage]
         end
       end
     end
