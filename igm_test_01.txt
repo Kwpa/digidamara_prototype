@@ -87,7 +87,7 @@ Resources
     do customevent with time
     end
     on customevent:
-    if (time>2.5 and time<3.5)
+    if (this>2.5 and this<3.5)
     log Hey you
     end
     end
