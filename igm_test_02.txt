@@ -119,14 +119,12 @@ Buttons
     text:Team 2 (HP = [team1health])
     on click:
       if (energy>=1 and team1health>=1)
-        log You are awesome
         yield 2 sparks
         yield 5 team1health
+        lose 1 energy
         if (team1health > team1maxhealth)
           team1health is team1maxhealth
         end
-        lose 1 energy
-        log logit 2
       end
     end
   *team2button
