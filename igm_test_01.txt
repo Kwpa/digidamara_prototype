@@ -53,7 +53,9 @@ Layout
 
 
 Includes
-  *include concat %valueid %anotherid: log [%valueid]
+  *include concat %valueid %anotherid
+    log [%valueid]
+    log [%anotherid]
 
 Resources
   *energy
