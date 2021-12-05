@@ -68,10 +68,10 @@ Includes
   *include schedevent %schedtime %eventname %amessage %bmessage %prob="100%"
     on tick:
       if (time=[%schedtime])
-        if (chance([prob])=1)
-          log [%eventname][amessage]
+        if (chance([%prob])=1)
+          log [%eventname][%amessage]
         else
-          log [%eventname][bmessage]
+          log [%eventname][%bmessage]
         end
       end
     end
