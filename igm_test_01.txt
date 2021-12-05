@@ -56,13 +56,17 @@ Resources
     name:Energy
     desc:Give your energy to the teams!
 	on start:
-		yield 10 energy
+		start with 10 energy
 		log You are awesome
 	end
 
   *spark|sparks
     name:Spark|Sparks
     desc:Dancers at the end of the universe generate this!
+
+  *team1logcount
+    name:team1logcount
+    hidden:true
 
 Buttons
   *team1button
@@ -85,6 +89,15 @@ Buttons
   end
   on maketheteam:
   yield 100 sparks
+  end
+  on click:
+  team1count is random(0,6)
+  if (team1count is 0) log Text (team1count) end
+  if (team1count is 1) log Text (team1count) end
+  if (team1count is 2) log Text (team1count) end
+  if (team1count is 3) log Text (team1count) end
+  if (team1count is 4) log Text (team1count) end
+  if (team1count is 5) log Text (team1count) end
   end
 
 
