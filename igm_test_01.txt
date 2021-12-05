@@ -88,7 +88,7 @@ Buttons
   on click:
 	if (energy>=1)
   log You are awesome
-  log 11 times 3 is [[i:concat $id="hello"]].
+  log 11 times 3 is [i:concat $id="hello"].
   yield 2 sparks
   lose 1 energy
   log logit 2
