@@ -69,7 +69,7 @@ Resources
 		start with:10
 		log You are awesome!
     [i:concat %astring="20" %bstring="helloo"]
-    storetext is [i:state %value=3]
+    log [i:state %value=3]
 	end
 
   *spark|sparks
