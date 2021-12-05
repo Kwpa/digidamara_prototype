@@ -7,7 +7,7 @@ Let's make a game!
 
 Settings
 
-  background:https://t4.ftcdn.net/jpg/02/69/60/01/360_F_269600145_7JkNiBJjUwbweqrfjDAcQQPFYsMK2uE0.jpg
+  background:https://ak.picdn.net/shutterstock/videos/1014299564/thumb/1.jpg
 
 CSS
   #box-main
