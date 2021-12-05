@@ -96,7 +96,7 @@ Buttons
     end
   *team1button
     name:Team 1
-  *team1button
+  *team2button
     name:Team 2
-  *team1button
+  *team3button
     name:Team 3
