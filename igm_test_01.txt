@@ -57,9 +57,11 @@ Includes
     log [%astring] [%bstring]
 
   *include state %astring %bstring
+    on start:
     do dump with [this]
+    end
     on dump:
-      log [%astring] [%bstring]
+    log [%astring] [%bstring]
     end
 
 
@@ -71,12 +73,12 @@ Resources
   *energy
     name:Energy
     desc:Give your energy to the teams
-	on start:
-		start with:10
-		log You are awesome!
     [i:state %astring="40" %bstring="weee"]
-    [i:concat %astring="20" %bstring="hello"]
-	end
+    on start:
+  		start with:10
+  		log You are awesome!
+      [i:concat %astring="20" %bstring="hello"]
+  	end
 
   *spark|sparks
     name:Spark|Sparks
