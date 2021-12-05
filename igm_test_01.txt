@@ -70,6 +70,11 @@ Includes
     log [%eventname]: [%message]
 
 Resources
+  *time
+    on tick:
+    yield 1 time
+    //[i:event %schedtime=3 %eventname="event1" %message="this cool event" %prob="100"]
+    end
 
   *storetext1
     name:storeithere
@@ -86,12 +91,6 @@ Resources
   *spark|sparks
     name:Spark|Sparks
     desc:Dancers at the end of the universe generate this!
-
-  *time
-    on tick:
-    yield 1 time
-    [i:event %schedtime=3 %eventname="event1" %message="this cool event" %prob="100"]
-    end
 
 Buttons
   *team1button
