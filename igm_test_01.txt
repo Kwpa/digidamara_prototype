@@ -84,12 +84,7 @@ Resources
     //[i:event %schedtime=3 %eventname="event1" %message="this cool event" %prob="100"]
     on tick:
     yield 1 time
-    do customevent with time
-    end
-    on customevent:
-    if (this>2.5 and this<3.5)
-    log Hey you
-    end
+    if (this>2.5 and this<3.5) log Hey you!
     end
 
   *storetext1
