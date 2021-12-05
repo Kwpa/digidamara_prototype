@@ -78,6 +78,14 @@ Resources
     end
     [i:schedevent %schedtime="2" %eventname="event1" %amessage="this cool event" %bmessage="this rare event" %prob="50%"]
 
+  *team1health
+    on start:
+      start with:100
+    end
+    on tick:
+      lose 1 team1health
+    end
+
   *energy
     name:Energy
     desc:Give your energy to the teams
@@ -110,6 +118,7 @@ Buttons
   *team1button
     name:Team 1
     class:team1
+    text:Team 2 ([team1health])
   *team2button
     name:Team 2
     class:team2
