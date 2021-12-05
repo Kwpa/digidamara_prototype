@@ -65,14 +65,15 @@ Includes
     name:[%astring] [%bstring]
     end
 */
-  *include event %schedtime %eventname %message %prob
+  *include event %schedtime
     on tick:
-    do customevent with this
-    end
-    on customevent:
-    if (time=[%schedtime] and chance([%prob]%)=1)
-    log [%eventname]: [%message]
-    end
+      if (this=[%schedtime])
+        if (chance(50%)=1)
+          log We won
+        else
+          log We lost
+        end
+      end
     end
 
 Resources
@@ -85,6 +86,7 @@ Resources
     on tick:
       yield 1 time
     end
+    [i:event %schedtime=3]
     on tick:
       if (this>2.5 and this<3.5)
         if (chance(50%)=1)
