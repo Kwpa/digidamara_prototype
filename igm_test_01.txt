@@ -58,6 +58,7 @@ Resources
 	on start:
 		start with:10
 		log You are awesome
+    [include:concat $id="hello"].
 	end
 
   *spark|sparks
@@ -73,7 +74,8 @@ Resources
   *textlog6
 
 Includes
-  *include concat $id:[$id]
+  *include concat $id:
+    log [%id]
 
 Buttons
   *team1button
@@ -88,7 +90,6 @@ Buttons
   on click:
 	if (energy>=1)
   log You are awesome
-  log 11 times 3 is [i:concat $id="hello"].
   yield 2 sparks
   lose 1 energy
   log logit 2
