@@ -70,6 +70,9 @@ Includes
     log [%eventname]: [%message]
 
 Resources
+
+  *textlog0
+  
   *time
     on tick:
     yield 1 time
