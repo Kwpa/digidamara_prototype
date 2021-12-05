@@ -26,22 +26,26 @@ CSS
     width:50%;
     height:30%;
   }
+  .teams
+  {
+    height:200%
+  }
   .team1
   {
     position:absolute;
-    top:50%;
+    top:30%;
     left:20%
   }
   .team2
   {
     position:absolute;
-    top:50%;
+    top:30%;
     left:50%
   }
   .team3
   {
     position:absolute;
-    top:50%;
+    top:30%;
     left:80%
   }
   .iconclass
@@ -119,7 +123,7 @@ Buttons
 
   *team1button
     name:Team 1
-    class:team1
+    class:team1 team
     text:Team 2 (HP = [team1health])
     on click:
       if (energy>=1 and team1health>=1)
@@ -133,7 +137,7 @@ Buttons
     end
   *team2button
     name:Team 2
-    class:team2
+    class:team2 team
   *team3button
     name:Team 3
-    class:team3
+    class:team3 team
