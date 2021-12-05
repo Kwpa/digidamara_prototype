@@ -73,7 +73,7 @@ Resources
   *textlog6
 
 Includes
-  *includes concat %value : %value
+  *include concat %value : %value
 
 Buttons
   *team1button
