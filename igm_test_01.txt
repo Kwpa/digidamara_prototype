@@ -61,7 +61,7 @@ Includes
     do dump with [%id]
     end
     on dump:
-    log [%bstring]
+    text:[%bstring]
     end
 
 
