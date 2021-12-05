@@ -56,9 +56,12 @@ Includes
   *include concat %astring %bstring
     log [%astring] [%bstring]
 
-  *include combine %cstring:%cstring
+  *include state %cstring : %cstring*3
 
 Resources
+
+  *storetext
+
   *energy
     name:Energy
     desc:Give your energy to the teams
@@ -66,7 +69,7 @@ Resources
 		start with:10
 		log You are awesome!
     [i:concat %astring="20" %bstring="helloo"]
-    log value is [[i:combine %cstring="3"]].
+    storetext is [i:state %cstring="3"]
 	end
 
   *spark|sparks
