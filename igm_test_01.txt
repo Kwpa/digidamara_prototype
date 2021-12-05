@@ -80,9 +80,10 @@ Resources
   *textlog0
 
   *time
-    on tick:yield 1 time
+    //on tick:yield 1 time
     //[i:event %schedtime=3 %eventname="event1" %message="this cool event" %prob="100"]
     on tick:
+    yield 1 time
     do customevent with time
     end
     on customevent:
