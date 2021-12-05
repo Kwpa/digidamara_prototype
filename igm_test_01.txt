@@ -19,7 +19,7 @@ CSS
   {
     top:70%;
     width:50%;
-    height:30%;
+    height:60%;
   }
   #bulkDisplay
   {
