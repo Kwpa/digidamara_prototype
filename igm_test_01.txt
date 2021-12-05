@@ -67,7 +67,7 @@ Includes
 */
   *include event %schedtime
     on tick:
-      if (this=[%schedtime])
+      if (time=[%schedtime])
         if (chance(50%)=1)
           log We won
         else
@@ -86,8 +86,8 @@ Resources
     on tick:
       yield 1 time
     end
-    [i:event %schedtime=3]
-    on tick:
+    [i:event %schedtime="3"]
+/*  on tick:
       if (this>2.5 and this<3.5)
         if (chance(50%)=1)
           log We won
@@ -95,7 +95,7 @@ Resources
           log We lost
         end
       end
-    end
+    end */
 
   *storetext1
     name:storeithere
