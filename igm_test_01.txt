@@ -56,12 +56,12 @@ Includes
   *include concat %astring %bstring
     log [%astring] [%bstring]
 
-  *include state %astring %bstring
+  *include state %id %bstring
     on start:
-    do dump with [this]
+    do dump with [%id]
     end
     on dump:
-    log [%astring] [%bstring]
+    log [%bstring]
     end
 
 
@@ -73,7 +73,7 @@ Resources
   *energy
     name:Energy
     desc:Give your energy to the teams
-    [i:state %astring="40" %bstring="wee"]
+    [i:state %id="this" %bstring="wee"]
     on start:
   		start with:10
   		log You are awesome!
