@@ -86,7 +86,7 @@ Resources
     do customevent with this
     end
     on customevent:
-    if (time=3 and chance([%prob]%)=100)
+    if (time=3 and chance(100%)=1)
     log Hey: you
     end
     end
