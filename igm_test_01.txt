@@ -58,7 +58,7 @@ Resources
 	on start:
 		start with:10
 		log You are awesome
-    [include concat $id="hello"]
+    [i:concat $id="hello"]
 	end
 
   *spark|sparks
