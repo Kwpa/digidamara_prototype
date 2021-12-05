@@ -73,7 +73,7 @@ Resources
   *textlog6
 
 Includes
-  *include multiplyBy3 %value:%value*3
+  *include multiplyBy3:"%hello"
 
 Buttons
   *team1button
@@ -88,7 +88,7 @@ Buttons
   on click:
 	if (energy>=1)
   log You are awesome
-  log 11 times 3 is.
+  log 11 times 3 is [[i:multiplyBy3]].
   yield 2 sparks
   lose 1 energy
   log logit 2
