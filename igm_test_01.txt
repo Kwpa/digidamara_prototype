@@ -91,12 +91,12 @@ Buttons
   end
   on click:
   team1count is random(0,6)
-  if (team1count is 0) log Text (team1count) end
-  if (team1count is 1) log Text (team1count) end
-  if (team1count is 2) log Text (team1count) end
-  if (team1count is 3) log Text (team1count) end
-  if (team1count is 4) log Text (team1count) end
-  if (team1count is 5) log Text (team1count) end
+  if (team1count is 0) log Text 0 end
+  if (team1count is 1) log Text 1 end
+  if (team1count is 2) log Text 2 end
+  if (team1count is 3) log Text 3 end
+  if (team1count is 4) log Text 4 end
+  if (team1count is 5) log Text 5 end
   end
 
 
