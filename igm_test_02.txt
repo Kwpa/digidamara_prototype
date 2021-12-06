@@ -88,18 +88,9 @@ Resources
     on tick:
       yield 1 eventtime
     end
-    [i:schedevent %schedtime="2"
-    %eventname="event1"
-    %amessage="this cool event"
-    %bmessage="this rare event"
-    %prob="50%"]
-    [i:schedevent %schedtime="3" %eventname="event2" %amessage="this cool event" %bmessage="this rare event" %prob="50%"]
-    [i:schedevent %schedtime="4" %eventname="event3" %amessage="this cool event" %bmessage="this rare event" %prob="50%"]
-    [i:schedevent %schedtime="5" %eventname="event4" %amessage="this cool event" %bmessage="this rare event" %prob="50%"]
-    [i:schedevent %schedtime="6" %eventname="event5" %amessage="this cool event" %bmessage="this rare event" %prob="50%"]
-    [i:schedevent %schedtime="7" %eventname="event6" %amessage="this cool event" %bmessage="this rare event" %prob="50%"]
-    [i:schedevent %schedtime="8" %eventname="event7" %amessage="this cool event" %bmessage="this rare event" %prob="50%"]
-
+    [i:schedevent %schedtime="2" %eventname="event1" %amessage="this cool event" %bmessage="this rare event" %prob="50%"]
+    [i:schedevent %schedtime="10" %eventname="Event mega" %amessage="Hey" %bmessage="Howdy" %prob="100%"]
+    [i:schedevent %schedtime="20" %eventname="Event mega" %amessage="You look nice" %bmessage="You my partner?" %prob="100%"]  
 
 // team 1
 
