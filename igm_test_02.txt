@@ -98,8 +98,6 @@ Includes
   *include cndtoggevent %acondition %bcondition %eventname %aaction %baction
     *[%eventname]
     start with:0
-
-    always hidden
     on tick:
       if ([%acondition] and [%eventname]=0)
         [%aaction]
