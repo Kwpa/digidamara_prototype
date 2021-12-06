@@ -100,13 +100,20 @@ Resources
       end
     end
 
+  *team1dead
+    on start:
+      start with:0
+    end
+    always hidden
+
   *team1lives
     on start:
       start with:24
     end
     on tick:
-      if (team1lives<0.5)
+      if (team1lives<0.5 and team1dead=0)
         log No lives left.
+        team1dead is 1
       end
     end
 
