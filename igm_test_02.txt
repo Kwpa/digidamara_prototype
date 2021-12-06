@@ -25,6 +25,7 @@ CSS
     top:70%;
     width:50%;
     height:30%;
+    font-size:17px;
   }
   .teams
   {
@@ -68,7 +69,6 @@ Layout
   *logBox
     contains:Log
     class:bottom
-    font-size:17px;
 
   *main
     contains:res, buttons, logBox
