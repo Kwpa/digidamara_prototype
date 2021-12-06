@@ -103,7 +103,7 @@ Includes
         [%aaction]
         this is 1
       else if ([%bcondition] and [%eventname]=1)
-        [%aaction]
+        [%baction]
         this is 0
       end
     end
