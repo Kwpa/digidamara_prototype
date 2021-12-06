@@ -51,10 +51,12 @@ CSS
   .energy
   {
     font-size:20px;
+    background-color: lightblue;
   }
   .sparks
   {
     font-size:20px;
+    background-color: orange;
   }
   .thing-icon,.particle
   {
@@ -250,7 +252,7 @@ Resources
     name:Spark|Sparks
     desc:Dancers at the end of the universe generate this!
     class:sparks
-    
+
 Buttons
 
   [i:teambuttoninit %teamid="team1" %teamname="Team One"]
