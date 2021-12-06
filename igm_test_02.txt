@@ -108,7 +108,7 @@ Resources
 
 // conditionals
 
-  [i:conditionalevent %condition="eventtime=5" %eventname="cndevent1" %amessage="YO" %bmessage="NO"]
+  [i:conditionalevent %condition="eventtime=5" %eventname="cndevent1" %amessage="YOO" %bmessage="NO"]
 
 // team 1
 
