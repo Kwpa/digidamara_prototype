@@ -151,7 +151,7 @@ Includes
       end
     end
 
-  *include cndevent %condition %eventname %amessage %bmessage %abprob="100%"
+  *include cndevent %condition %eventname %amessage %bmessage="null" %abprob="100%"
     *[%eventname]
     start with:1
     on tick:
@@ -190,14 +190,14 @@ Resources
     // !! put all scheduled events here //
 
     [i:schedevent %schedtime="2" %eventname="event1" %amessage="Welcome to DIGIDAMARA!" %bmessage="Welcome back to DIGIDAMARA!" %prob="50%"]
-    [i:schedevent %schedtime="8" %eventname="Event mega" %amessage="Click on your favourite team to keep them alive!" %bmessage="null"]
-    [i:schedevent %schedtime="14" %eventname="Event mega" %amessage="You have a limited number of clicks (called energy!)" %bmessage="null"]
+    [i:schedevent %schedtime="8" %eventname="Event mega" %amessage="Click on your favourite team to keep them alive!"]
+    [i:schedevent %schedtime="14" %eventname="Event mega" %amessage="You have a limited number of clicks (called energy!)"]
 
 // conditionals
 
   // !! put all conditional events here //
 
-  [i:cndevent %condition="energy<=5" %eventname="cndevent1" %amessage="Running out of energy!" %bmessage="NO"]
+  [i:cndevent %condition="energy<=5" %eventname="cndevent1" %amessage="Running out of energy!"]
   //[i:cndtoggevent %acondition="team1health<=50" %bcondition="team1health>50" %eventname="cndtoggevent1" %aaction="yield 100 energy" %baction="yield 200 sparks"]
 
 // teams
