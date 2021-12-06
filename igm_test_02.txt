@@ -51,7 +51,7 @@ CSS
   .energy
   {
     font-size:20px;
-    background-color: lightblue;
+    background-color: DodgerBlue;
   }
   .sparks
   {
