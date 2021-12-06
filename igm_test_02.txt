@@ -81,7 +81,7 @@ Includes
     end
 
   *include conditionalevent %condition %eventname %amessage %bmessage %abprob="100%"
-    *cnd[%eventname]
+    *[%eventname]
     start with:1
     on tick:
       if ([%condition] and [%eventname]=1)
