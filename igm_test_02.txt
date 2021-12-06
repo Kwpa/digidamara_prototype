@@ -130,7 +130,7 @@ Resources
 
   *team1healthboost
     on start:
-      start with:10
+      start with:100
     end
 
   *team1healthloss
