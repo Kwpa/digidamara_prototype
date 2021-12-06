@@ -68,6 +68,7 @@ Layout
   *logBox
     contains:Log
     class:bottom
+    font-size:17px;
 
   *main
     contains:res, buttons, logBox
