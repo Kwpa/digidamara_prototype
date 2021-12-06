@@ -189,7 +189,7 @@ Resources
 
     // !! put all scheduled events here //
 
-    [i:schedevent %schedtime="2" %eventname="event1" %amessage="Welcome to DIGIDAMARA!" %bmessage="Welcome back to DIGIDAMARA!" %prob="50%"]
+    [i:schedevent %schedtime="2" %eventname="event1" %amessage="<b>Welcome to DIGIDAMARA!</b>" %bmessage="<b>Welcome back to DIGIDAMARA!</b>" %prob="50%"]
     [i:schedevent %schedtime="8" %eventname="Event mega" %amessage="Click on your favourite team to keep them alive!"]
     [i:schedevent %schedtime="14" %eventname="Event mega" %amessage="You have a limited number of clicks (called energy!)"]
 
