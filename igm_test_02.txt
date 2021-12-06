@@ -80,6 +80,20 @@ Includes
       end
     end
 
+  *include conditionalevent %condition %eventname %amessage %bmessage %abprob="100%"
+    *cnd[%eventname]
+    start with:1
+    on tick:
+      if ([%condition] and [%eventname]=1)
+        if (chance([%abprob])=1)
+          log [%eventname] [%amessage]
+        else
+          log [%eventname] [%bmessage]
+        end
+        this is 0
+      end
+    end
+
 Resources
 
 // time
@@ -91,6 +105,10 @@ Resources
     [i:schedevent %schedtime="2" %eventname="event1" %amessage="this cool event" %bmessage="this rare event" %prob="50%"]
     [i:schedevent %schedtime="10" %eventname="Event mega" %amessage="Hey" %bmessage="Howdy" %prob="100%"]
     [i:schedevent %schedtime="20" %eventname="Event mega" %amessage="You look nice" %bmessage="You my partner?" %prob="100%"]
+
+// conditionals
+
+  [i:conditionalevent %condition="eventtime=5" %eventname="cndevent1" %amessage="YO" %bmessage="NO"]
 
 // team 1
 
