@@ -125,7 +125,7 @@ Includes
     *[%teamid]button
       name:[%teamname]
       desc:Click [%teamname] to generate Sparks, costs Energy
-      class:[%teamid] team //css class
+      class:[%teamid] team
       icon:https://static.thenounproject.com/png/788246-200.png
       tooltip origin:bottom
       tooltip class:red
