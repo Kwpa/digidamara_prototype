@@ -88,7 +88,6 @@ Includes
     on start:
       start with:0
     end
-    always hidden
   *[%teamid]lives
     on start:
       start with:[%lives]
