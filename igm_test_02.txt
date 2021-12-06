@@ -99,6 +99,7 @@ Includes
         lose 1 teamsurvivalcount
         log No lives left. [%teamname] are out of the competition!
         [%teamid]dead is 1
+        [%teamid]health is 0
       end
       if (teamsurvivalcount=1 and [%teamid]dead=0)
         log All contestants eliminated! [%teamname] wins!
