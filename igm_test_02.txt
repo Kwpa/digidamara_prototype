@@ -150,7 +150,7 @@ Includes
         end
       end
       on click:
-        if([%teamid]dead=0)
+        if ([%teamid]dead=0)
           yield 1 [%teamid]clickcount
         end
       end
