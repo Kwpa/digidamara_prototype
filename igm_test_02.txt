@@ -70,19 +70,21 @@ Layout
 
 Includes
 
-  *include teaminit %teamid %teamname %health="100" %refrhealth="50" %lives="24" %maxhealth="100" %healthboost="100" %healthloss="10" %clickcost="1" %sparkle="2"
+  *include teaminit %teamid %teamname %health="100" %refrhealth="50" %lives="24" %maxhealth="100" %healthboost="100" %healthloss="1" %clickcost="1" %sparkle="2"
   *[%teamid]health
     name: [%teamname]
     on start:
       start with:[%health]
     end
     on tick:
-      lose [%teamid]healthloss [%teamid]health
-      if ([%teamid]health<0.5 and [%teamid]lives>=1)
-        lose 1 [%teamid]lives
-        log [n:this] has lost a life. [[%teamid]lives-1] lives remaining!
-        [%teamid]health is [%refrhealth]
-      end
+      if (teamsurvivalcount>=1)
+        lose [%teamid]healthloss [%teamid]health
+        if ([%teamid]health<0.5 and [%teamid]lives>=1)
+          lose 1 [%teamid]lives
+          log [n:this] has lost a life. [[%teamid]lives-1] lives remaining!
+          [%teamid]health is [%refrhealth]
+          end
+        end
     end
   *[%teamid]dead
     on start:
@@ -93,9 +95,13 @@ Includes
       start with:[%lives]
     end
     on tick:
-      if ([%teamid]lives<0.5 and [%teamid]dead=0)
+      if ([%teamid]lives<0.5 and [%teamid]dead=0 and teamsurvivalcount>=2)
+        lose 1 teamsurvivalcount
         log No lives left. [%teamname] are out of the competition!
         [%teamid]dead is 1
+      end
+      if (teamsurvivalcount=1 and [%teamid]dead>=1)
+        log All contestants eliminated! [%teamname] win!
       end
     end
   *[%teamid]maxhealth
@@ -177,6 +183,9 @@ Includes
       end
     end
 
+    // example [i:cndtoggevent %acondition="team1health<=50" %bcondition="team1health>50" %eventname="cndtoggevent1" %aaction="yield 100 energy" %baction="yield 200 sparks"]
+
+
 Resources
 
 // time
@@ -189,21 +198,25 @@ Resources
     // !! put all scheduled events here //
 
     [i:schedevent %schedtime="2" %eventname="event1" %amessage="<b>Welcome to DIGIDAMARA!</b>" %bmessage="<b>Welcome back to DIGIDAMARA!</b>" %prob="50%"]
-    [i:schedevent %schedtime="8" %eventname="Event mega" %amessage="Click on your favourite team to keep them alive!"]
-    [i:schedevent %schedtime="14" %eventname="Event mega" %amessage="You have a limited number of clicks (called energy!)"]
+    [i:schedevent %schedtime="4" %eventname="Event mega" %amessage="Click on your favourite team to keep them alive!"]
+    [i:schedevent %schedtime="6" %eventname="Event mega" %amessage="You have a limited number of clicks (called energy!)"]
 
 // conditionals
 
   // !! put all conditional events here //
 
   [i:cndevent %condition="energy<=5" %eventname="cndevent1" %amessage="Running out of energy!"]
-  //[i:cndtoggevent %acondition="team1health<=50" %bcondition="team1health>50" %eventname="cndtoggevent1" %aaction="yield 100 energy" %baction="yield 200 sparks"]
 
 // teams
 
-  [i:teaminit %teamid="team1" %teamname="Team 1" %lives="3"]
-  [i:teaminit %teamid="team2" %teamname="Team 2" %lives="3"]
-  [i:teaminit %teamid="team3" %teamname="Team 3" %lives="3"]
+  [i:teaminit %teamid="team1" %teamname="Team 1"]
+  [i:teaminit %teamid="team2" %teamname="Team 2"]
+  [i:teaminit %teamid="team3" %teamname="Team 3"]
+
+  *teamsurvivalcount
+    on start:
+      start with:3
+    end
 
 // main resources
 
