@@ -80,7 +80,7 @@ Includes
       lose [%teamid]healthloss [%teamid]health
       if ([%teamid]health<0.5 and [%teamid]lives>=1)
         lose 1 [%teamid]lives
-        log [n:this] has lost a life. [[%teamid]lives] lives remaining!
+        log [n:this] has lost a life. [[%teamid]lives-1] lives remaining!
         [%teamid]health is [%refrhealth]
       end
     end
@@ -305,7 +305,7 @@ Buttons
       end
     end
 
-  //[i:teambuttonsetup %teamid="team2" %teamname="Team Two"]
+  [i:teambuttonsetup %teamid="team2" %teamname="Team Two"]
 
   *team3button
     name:Team 3
