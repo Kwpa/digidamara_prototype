@@ -69,6 +69,79 @@ Layout
     contains:Buttons
 
 Includes
+
+  *include teaminit %teamid %teamname %health="100" %refrhealth="50" %lives="24" %maxhealth="100" %healthboost="100" %healthloss="10" %clickcost="1" %sparkle="2"
+  *[%teamid]health
+    name: [%teamname]
+    on start:
+      start with:[%health]
+    end
+    on tick:
+      lose [%teamid]healthloss [%teamid]health
+      if ([%teamid]health<0.5 and [%teamid]lives>=1)
+        lose 1 [%teamid]lives
+        log [n:this] has lost a life. [[%teamid]lives] lives remaining!
+        [%teamid]health is [%refrhealth]
+      end
+    end
+  *[%teamid]dead
+    on start:
+      start with:0
+    end
+    always hidden
+  *[%teamid]lives
+    on start:
+      start with:[%lives]
+    end
+    on tick:
+      if ([%teamid]lives<0.5 and [%teamid]dead=0)
+        log No lives left. [%teamname] are out of the comp!
+        [%teamid]dead is 1
+        [%teamid]health is 0
+      end
+    end
+  *[%teamid]maxhealth
+    on start:
+      start with:[%maxhealth]
+    end
+  *[%teamid]healthboost
+    on start:
+      start with:[%healthboost]
+    end
+  *[%teamid]healthloss
+    on start:
+      start with:[%healthloss]
+    end
+  *[%teamid]clickcost
+    on start:
+      start with:[%clickcost]
+    end
+  *[%teamid]sparkle
+    on start:
+      start with:[%sparkle]
+    end
+
+  *include teambuttonsetup %teamid %teamname
+    *[%teamid]button
+      name:[%teamname]
+      desc:Click [%teamname] to generate Sparks, costs Energy
+      class:[%teamid] team //css class
+      icon:https://static.thenounproject.com/png/788246-200.png
+      tooltip origin:bottom
+      tooltip class:red
+      text:[%teamname] <//>(LIVES = [[%teamid]lives])<//>(HP = [[%teamid]health]/[[%teamid]maxhealth])
+      cost:[%teamid]clickcost energy
+      on click:
+        if (energy>=1 and [%teamid]health>=1)
+          yield [%teamid]sparkle sparks
+          yield [%teamid]healthboost [%teamid]health
+          lose [%teamid]clickcost energy
+          if ([%teamid]health > [%teamid]maxhealth)
+            [%teamid]health is [%teamid]maxhealth
+          end
+        end
+      end
+
   *include schedevent %schedtime %eventname %amessage %bmessage %prob="100%"
     on tick:
       if (eventtime=[%schedtime])
@@ -97,6 +170,7 @@ Includes
 
   *include cndtoggevent %acondition %bcondition %eventname %aaction %baction
     *[%eventname]
+    always hidden
     start with:0
     on tick:
       if ([%acondition] and [%eventname]=0)
@@ -130,6 +204,10 @@ Resources
   [i:cndevent %condition="energy<=5" %eventname="cndevent1" %amessage="Running out of energy!" %bmessage="NO"]
   [i:cndtoggevent %acondition="team1health<=50" %bcondition="team1health>50" %eventname="cndtoggevent1" %aaction="yield 100 energy" %baction="yield 200 sparks"]
 
+// teams
+
+  [i:teaminit %teamid="team2" %teamname="Team 2"]
+
 // team 1
 
   *team1health
@@ -143,7 +221,7 @@ Resources
         lose 1 team1lives
         log [n:this] has lost a life. [team1lives] lives remaining!
         team1health is 50
-      else if (team1health<0.5 and team1lives<1)
+      else if (team1lives<1)
         team1health is 0
       end
     end
@@ -214,7 +292,7 @@ Buttons
   *team1button
     name:Team 1
     class:team1 team
-    text:Team 2 <//>(LIVES = [team1lives])<//>(HP = [team1health]/[team1maxhealth])
+    text:Team 1 <//>(LIVES = [team1lives])<//>(HP = [team1health]/[team1maxhealth])
     cost:team1clickcost energy
     on click:
       if (energy>=1 and team1health>=1)
@@ -226,9 +304,9 @@ Buttons
         end
       end
     end
-  *team2button
-    name:Team 2
-    class:team2 team
+
+  [i:teambuttonsetup %teamid="team2" %teamname="Team 2"]
+
   *team3button
     name:Team 3
     class:team3 team
