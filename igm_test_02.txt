@@ -121,7 +121,7 @@ Includes
       start with:[%sparkle]
     end
 
-  *include teambuttonsetup %teamid %teamname
+  *include teambuttoninit %teamid %teamname
     *[%teamid]button
       name:[%teamname]
       desc:Click [%teamname] to generate Sparks, costs Energy
@@ -206,67 +206,9 @@ Resources
 
 // teams
 
+  [i:teaminit %teamid="team1" %teamname="Team 1"]
   [i:teaminit %teamid="team2" %teamname="Team 2"]
-
-// team 1
-
-  *team1health
-    name: Team 1
-    on start:
-      start with:100
-    end
-    on tick:
-      lose team1healthloss team1health
-      if (team1health<0.5 and team1lives>=1)
-        lose 1 team1lives
-        log [n:this] has lost a life. [team1lives-1] lives remaining!
-        team1health is 50
-      else if (team1lives<1)
-        team1health is 0
-      end
-    end
-
-  *team1dead
-    on start:
-      start with:0
-    end
-    always hidden
-
-  *team1lives
-    on start:
-      start with:24
-    end
-    on tick:
-      if (team1lives<0.5 and team1dead=0)
-        log No lives left.
-        team1dead is 1
-      end
-    end
-
-  *team1maxhealth
-    on start:
-      start with:100
-    end
-
-  *team1healthboost
-    on start:
-      start with:100
-    end
-
-  *team1healthloss
-    on start:
-      start with:10
-    end
-
-  *team1clickcost
-    on start:
-      start with:1
-    end
-
-  *team1sparkle
-    on start:
-      start with:2
-    end
+  [i:teaminit %teamid="team3" %teamname="Team 3"]
 
 // main resources
 
@@ -282,31 +224,7 @@ Resources
     desc:Dancers at the end of the universe generate this!
 
 Buttons
-  *TEMPLATE
-    name:Team 1
-    desc:Click Team 1 to generate Sparks, costs Energy
-    icon:https://static.thenounproject.com/png/788246-200.png
-    tooltip origin:bottom
-    tooltip class:red
 
-  *team1button
-    name:Team 1
-    class:team1 team
-    text:Team 1 <//>(LIVES = [team1lives])<//>(HP = [team1health]/[team1maxhealth])
-    cost:team1clickcost energy
-    on click:
-      if (energy>=1 and team1health>=1)
-        yield team1sparkle sparks
-        yield team1healthboost team1health
-        lose team1clickcost energy
-        if (team1health > team1maxhealth)
-          team1health is team1maxhealth
-        end
-      end
-    end
-
-  [i:teambuttonsetup %teamid="team2" %teamname="Team Two"]
-
-  *team3button
-    name:Team 3
-    class:team3 team
+  [i:teambuttoninit %teamid="team1" %teamname="Team One"]
+  [i:teambuttoninit %teamid="team2" %teamname="Team Two"]
+  [i:teambuttoninit %teamid="team3" %teamname="Team Three"]
