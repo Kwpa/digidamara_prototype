@@ -80,9 +80,10 @@ Includes
       end
     end
 
-  *include conditionalevent %condition %eventname %amessage %bmessage %abprob="100%"
+  *include cndevent %condition %eventname %amessage %bmessage %abprob="100%"
     *[%eventname]
     start with:1
+    always hidden
     on tick:
       if ([%condition] and [%eventname]=1)
         if (chance([%abprob])=1)
@@ -90,6 +91,21 @@ Includes
         else
           log [%eventname] [%bmessage]
         end
+        this is 0
+      end
+    end
+
+  *include cndtoggevent %acondition %bcondition %eventname %aaction %baction
+    *[%eventname]
+    start with:0
+
+    always hidden
+    on tick:
+      if ([%acondition] and [%eventname]=0)
+        [%aaction]
+        this is 1
+      else if ([%bcondition] and [%eventname]=1)
+        [%aaction]
         this is 0
       end
     end
@@ -102,13 +118,19 @@ Resources
     on tick:
       yield 1 eventtime
     end
+
+    // !! put all scheduled events here //
+
     [i:schedevent %schedtime="2" %eventname="event1" %amessage="this cool event" %bmessage="this rare event" %prob="50%"]
-    [i:schedevent %schedtime="10" %eventname="Event mega" %amessage="Hey" %bmessage="Howdy" %prob="100%"]
-    [i:schedevent %schedtime="20" %eventname="Event mega" %amessage="You look nice" %bmessage="You my partner?" %prob="100%"]
+    [i:schedevent %schedtime="10" %eventname="Event mega" %amessage="Hey" %bmessage="Howdy" %prob="50%"]
+    [i:schedevent %schedtime="20" %eventname="Event mega" %amessage="You look nice" %bmessage="You my partner?" %prob="50%"]
 
 // conditionals
 
-  [i:conditionalevent %condition="eventtime=5" %eventname="cndevent1" %amessage="YOO" %bmessage="NO"]
+  // !! put all conditional events here //
+
+  [i:cndevent %condition="energy<=5" %eventname="cndevent1" %amessage="Running out of energy!" %bmessage="NO"]
+  [i:cndtoggevent %acondition="team1health<=50" %bcondition="team1health>50" %eventname="cndtoggevent1" %aaction="yield 100 energy" %baction="yield 200 sparks"]
 
 // team 1
 
