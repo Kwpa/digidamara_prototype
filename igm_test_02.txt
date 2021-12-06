@@ -206,9 +206,9 @@ Resources
 
 // teams
 
-  [i:teaminit %teamid="team1" %teamname="Team 1"]
-  [i:teaminit %teamid="team2" %teamname="Team 2"]
-  [i:teaminit %teamid="team3" %teamname="Team 3"]
+  [i:teaminit %teamid="team1" %teamname="Team 1" %lives="3"]
+  [i:teaminit %teamid="team2" %teamname="Team 2" %lives="3"]
+  [i:teaminit %teamid="team3" %teamname="Team 3" %lives="3"]
 
 // main resources
 
