@@ -93,7 +93,7 @@ Resources
       start with:100
     end
     on tick:
-      lose 1 team1health
+      lose 10 team1health
       if (team1heath<0.5)
         lose 1 team1lives
         team1health is 50
@@ -106,7 +106,7 @@ Resources
     end
     on tick:
       if (team1lives<0.5)
-        log No lives left
+        log No lives left.
       end
     end
 
