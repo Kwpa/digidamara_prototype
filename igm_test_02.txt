@@ -95,7 +95,7 @@ Includes
     end
     on tick:
       if ([%teamid]lives<0.5 and [%teamid]dead=0)
-        log No lives left. [%teamname] are out of the comp!
+        log No lives left. [%teamname] are out of the competition!
         [%teamid]dead is 1
       end
     end
