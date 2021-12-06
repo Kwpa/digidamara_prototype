@@ -305,7 +305,7 @@ Buttons
       end
     end
 
-  [i:teambuttonsetup %teamid="team2" %teamname="Team 2"]
+  [i:teambuttonsetup %teamid="team2" %teamname="Team Two"]
 
   *team3button
     name:Team 3
