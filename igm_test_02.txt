@@ -102,7 +102,7 @@ Includes
       end
       if (teamsurvivalcount=1 and [%teamid]dead=0)
         log All contestants eliminated! [%teamname] wins!
-        [%teamid]dead=2
+        [%teamid]dead is 2
       end
     end
   *[%teamid]maxhealth
