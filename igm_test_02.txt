@@ -148,8 +148,6 @@ Buttons
           team1health is team1maxhealth
         end
       end
-      if (team1health < 0.5)
-
     end
   *team2button
     name:Team 2
