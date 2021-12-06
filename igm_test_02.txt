@@ -174,7 +174,7 @@ Buttons
   *team1button
     name:Team 1
     class:team1 team
-    text:Team 2 (LIVES = [team1lives], HP = [team1health]/[team1maxhealth])
+    text:Team 2 <//>(LIVES = [team1lives])<//>(HP = [team1health]/[team1maxhealth])
     cost:team1clickcost energy
     on click:
       if (energy>=1 and team1health>=1)
