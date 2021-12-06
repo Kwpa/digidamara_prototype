@@ -48,7 +48,14 @@ CSS
     top:30%;
     left:80%
   }
-
+  .energy
+  {
+    font-size:20px;
+  }
+  .sparks
+  {
+    font-size:20px;
+  }
   .thing-icon,.particle
   {
     width:200px;
@@ -237,11 +244,13 @@ Resources
     on start:
   		start with:10
   	end
+    class:energy
 
   *spark|sparks
     name:Spark|Sparks
     desc:Dancers at the end of the universe generate this!
-
+    class:sparks
+    
 Buttons
 
   [i:teambuttoninit %teamid="team1" %teamname="Team One"]
