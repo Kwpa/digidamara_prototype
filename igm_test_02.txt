@@ -221,8 +221,6 @@ Resources
         lose 1 team1lives
         log [n:this] has lost a life. [team1lives] lives remaining!
         team1health is 50
-      else if (team1lives<1)
-        team1health is 0
       end
     end
 
