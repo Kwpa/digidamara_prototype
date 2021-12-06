@@ -154,7 +154,6 @@ Includes
   *include cndevent %condition %eventname %amessage %bmessage %abprob="100%"
     *[%eventname]
     start with:1
-    always hidden
     on tick:
       if ([%condition] and [%eventname]=1)
         if (chance([%abprob])=1)
@@ -168,7 +167,6 @@ Includes
 
   *include cndtoggevent %acondition %bcondition %eventname %aaction %baction
     *[%eventname]
-    always hidden
     start with:0
     on tick:
       if ([%acondition] and [%eventname]=0)
