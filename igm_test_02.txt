@@ -90,7 +90,7 @@ Resources
     end
     [i:schedevent %schedtime="2" %eventname="event1" %amessage="this cool event" %bmessage="this rare event" %prob="50%"]
     [i:schedevent %schedtime="10" %eventname="Event mega" %amessage="Hey" %bmessage="Howdy" %prob="100%"]
-    [i:schedevent %schedtime="20" %eventname="Event mega" %amessage="You look nice" %bmessage="You my partner?" %prob="100%"]  
+    [i:schedevent %schedtime="20" %eventname="Event mega" %amessage="You look nice" %bmessage="You my partner?" %prob="100%"]
 
 // team 1
 
@@ -174,7 +174,7 @@ Buttons
   *team1button
     name:Team 1
     class:team1 team
-    text:Team 2 (HP = [team1health])
+    text:Team 2 (LIVES = [team1lives], HP = [team1health]/[team1maxhealth])
     cost:team1clickcost energy
     on click:
       if (energy>=1 and team1health>=1)
