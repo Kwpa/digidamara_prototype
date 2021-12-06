@@ -140,7 +140,7 @@ Includes
         end
       end
 
-  *include schedevent %schedtime %eventname %amessage %bmessage %prob="100%"
+  *include schedevent %schedtime %eventname %amessage %bmessage="null" %prob="100%"
     on tick:
       if (eventtime=[%schedtime])
         if (chance([%prob])=1)
@@ -189,9 +189,9 @@ Resources
 
     // !! put all scheduled events here //
 
-    [i:schedevent %schedtime="2" %eventname="event1" %amessage="this cool event" %bmessage="this rare event" %prob="50%"]
-    [i:schedevent %schedtime="10" %eventname="Event mega" %amessage="Hey" %bmessage="Howdy!" %prob="50%"]
-    [i:schedevent %schedtime="20" %eventname="Event mega" %amessage="You look nice" %bmessage="You my partner?" %prob="50%"]
+    [i:schedevent %schedtime="2" %eventname="event1" %amessage="Welcome to DIGIDAMARA!" %bmessage="Welcome back to DIGIDAMARA!" %prob="50%"]
+    [i:schedevent %schedtime="8" %eventname="Event mega" %amessage="Click on your favourite team to keep them alive!" %bmessage="null"]
+    [i:schedevent %schedtime="14" %eventname="Event mega" %amessage="You have a limited number of clicks (called energy!)" %bmessage="null"]
 
 // conditionals
 
