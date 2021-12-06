@@ -94,6 +94,20 @@ Resources
     end
     on tick:
       lose 1 team1health
+      if (team1heath<0.5)
+        lose 1 team1lives
+        team1health is 50
+      end
+    end
+
+  *team1lives
+    on start:
+      start with:24
+    end
+    on tick:
+      if (team1lives<0.5)
+        log No lives left
+      end
     end
 
   *team1maxhealth
@@ -134,6 +148,8 @@ Buttons
           team1health is team1maxhealth
         end
       end
+      if (team1health < 0.5)
+
     end
   *team2button
     name:Team 2
