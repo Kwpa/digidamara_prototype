@@ -199,7 +199,7 @@ Resources
 
   // !! put all conditional events here //
 
-  //[i:cndevent %condition="energy<=5" %eventname="cndevent1" %amessage="Running out of energy!" %bmessage="NO"]
+  [i:cndevent %condition="energy<=5" %eventname="cndevent1" %amessage="Running out of energy!" %bmessage="NO"]
   //[i:cndtoggevent %acondition="team1health<=50" %bcondition="team1health>50" %eventname="cndtoggevent1" %aaction="yield 100 energy" %baction="yield 200 sparks"]
 
 // teams
