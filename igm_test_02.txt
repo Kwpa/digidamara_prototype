@@ -125,6 +125,10 @@ Includes
     on start:
       start with:[%sparkle]
     end
+  *[%teamid]clickcount
+    on start:
+      start with:0
+    end
 
   *include teambuttoninit %teamid %teamname
     *[%teamid]button
@@ -136,7 +140,8 @@ Includes
       tooltip class:red
       text:[%teamname] <//>(LIVES = [[%teamid]lives])<//>(HP = [[%teamid]health]/[[%teamid]maxhealth])
       on click:
-        if (energy>=1 and [%teamid]health>=1)
+        if (energy>=1 and [%teamid]health>=1 and [%teamid]dead=0)
+          yield 1 [%teamid]clickcount
           yield [%teamid]sparkle sparks
           yield [%teamid]healthboost [%teamid]health
           lose [%teamid]clickcost energy
