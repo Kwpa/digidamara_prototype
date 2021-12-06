@@ -97,7 +97,6 @@ Includes
       if ([%teamid]lives<0.5 and [%teamid]dead=0)
         log No lives left. [%teamname] are out of the comp!
         [%teamid]dead is 1
-        [%teamid]health is 0
       end
     end
   *[%teamid]maxhealth
