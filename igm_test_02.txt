@@ -82,7 +82,7 @@ Layout
 
 Includes
 
-  *include teaminit %teamid %teamname %health="100" %refrhealth="50" %lives="3" %maxhealth="100" %healthboost="100" %healthloss="10" %clickcost="1" %sparkle="2"
+  *include teaminit %teamid %teamname %health="100" %refrhealth="50" %lives="3" %maxhealth="100" %healthboost="100" %healthloss="5" %clickcost="1" %sparkle="2"
     *[%teamid]health
       name: [%teamname]
       on start:
