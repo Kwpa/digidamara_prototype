@@ -26,7 +26,7 @@ CSS
     width:50%;
     height:30%;
     font-size:17px;
-    opacity:1;
+    backgroundColor:DodgerBlue;
   }
   .teams
   {
