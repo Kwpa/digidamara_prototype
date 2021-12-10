@@ -192,6 +192,13 @@ Includes
       end
     end
 
+  *include reveal %schedtime %item
+    on tick:
+      if (eventtime=[%schedtime])
+        show item
+      end
+    end
+
   *include cndevent %condition %eventname %amessage %bmessage="null" %abprob="100%"
     *[%eventname]
     start with:1
@@ -227,6 +234,7 @@ Includes
       desc:Click to begin.
       icon:https://static.thenounproject.com/png/3134226-200.png
       class:team2
+      hidden
       on click:
         startgame is 1
         paused is 0
@@ -249,6 +257,7 @@ Resources
     [i:schedevent %schedtime="2" %eventname="SYSTEM:" %amessage="<b>Welcome to DIGIDAMARA!</b>" %bmessage="<b>Welcome back to DIGIDAMARA!</b>" %prob="50%"]
     [i:schedevent %schedtime="4" %eventname="SYSTEM:" %amessage="Thanks for being here!"]
     [i:schedevent %schedtime="6" %eventname="SYSTEM:" %amessage="Click the start game button to begin!"]
+    [i:reveal %schedtime="6" "startbutton"]
     [i:pause %schedtime="6"]
     [i:schedevent %schedtime="9" %eventname="Unpaused" %amessage="Unpaused!"]
 
