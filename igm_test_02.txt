@@ -153,7 +153,7 @@ Includes
       text:[%teamname] <//>(LIVES = [[%teamid]lives])<//>(HP = [[%teamid]health]/[[%teamid]maxhealth])
       hidden
       on tick:
-        if(startgame=1)
+        if (startgame=1)
         show this
       end
       on click:
