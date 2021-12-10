@@ -82,65 +82,65 @@ Layout
 Includes
 
   *include teaminit %teamid %teamname %health="100" %refrhealth="50" %lives="3" %maxhealth="100" %healthboost="100" %healthloss="10" %clickcost="1" %sparkle="2"
-  *[%teamid]health
-    name: [%teamname]
-    on start:
-      start with:[%health]
-    end
-    on tick:
-      if (teamsurvivalcount>=2 and )
-        lose [%teamid]healthloss [%teamid]health
-        if ([%teamid]health<0.5 and [%teamid]lives>=1)
-          lose 1 [%teamid]lives
-          log [n:this] has lost a life. [[%teamid]lives-1] lives remaining!
-          [%teamid]health is [%refrhealth]
+    *[%teamid]health
+      name: [%teamname]
+      on start:
+        start with:[%health]
+      end
+      on tick:
+        if (teamsurvivalcount>=2 and startgame=1)
+          lose [%teamid]healthloss [%teamid]health
+          if ([%teamid]health<0.5 and [%teamid]lives>=1)
+            lose 1 [%teamid]lives
+            log [n:this] has lost a life. [[%teamid]lives-1] lives remaining!
+            [%teamid]health is [%refrhealth]
+          end
         end
       end
-    end
-  *[%teamid]dead
-    on start:
-      start with:0
-    end
-  *[%teamid]lives
-    on start:
-      start with:[%lives]
-    end
-    on tick:
-      if ([%teamid]lives=0 and [%teamid]dead=0 and teamsurvivalcount>=2)
-        lose 1 teamsurvivalcount
-        log No lives left. [%teamname] are out of the competition!
-        [%teamid]dead is 1
-        [%teamid]health is 0
+    *[%teamid]dead
+      on start:
+        start with:0
       end
-      if (teamsurvivalcount=1 and [%teamid]dead=0)
-        log All other contestants eliminated! [%teamname] wins!
-        [%teamid]dead is 2
+    *[%teamid]lives
+      on start:
+        start with:[%lives]
       end
-    end
-  *[%teamid]maxhealth
-    on start:
-      start with:[%maxhealth]
-    end
-  *[%teamid]healthboost
-    on start:
-      start with:[%healthboost]
-    end
-  *[%teamid]healthloss
-    on start:
-      start with:[%healthloss]
-    end
-  *[%teamid]clickcost
-    on start:
-      start with:[%clickcost]
-    end
-  *[%teamid]sparkle
-    on start:
-      start with:[%sparkle]
-    end
-  *[%teamid]clickcount
-    on start:
-      start with:0
-    end
+      on tick:
+        if ([%teamid]lives=0 and [%teamid]dead=0 and teamsurvivalcount>=2)
+          lose 1 teamsurvivalcount
+          log No lives left. [%teamname] are out of the competition!
+          [%teamid]dead is 1
+          [%teamid]health is 0
+        end
+        if (teamsurvivalcount=1 and [%teamid]dead=0)
+          log All other contestants eliminated! [%teamname] wins!
+          [%teamid]dead is 2
+        end
+      end
+    *[%teamid]maxhealth
+      on start:
+        start with:[%maxhealth]
+      end
+    *[%teamid]healthboost
+      on start:
+        start with:[%healthboost]
+      end
+    *[%teamid]healthloss
+      on start:
+        start with:[%healthloss]
+      end
+    *[%teamid]clickcost
+      on start:
+        start with:[%clickcost]
+      end
+    *[%teamid]sparkle
+      on start:
+        start with:[%sparkle]
+      end
+    *[%teamid]clickcount
+      on start:
+        start with:0
+      end
 
   *include teambuttoninit %teamid %teamname
     *[%teamid]button
@@ -212,6 +212,15 @@ Includes
 
     // example [i:cndtoggevent %acondition="team1health<=50" %bcondition="team1health>50" %eventname="cndtoggevent1" %aaction="yield 100 energy" %baction="yield 200 sparks"]
 
+  *include startbutton %text
+    *startbutton
+      name:[%text]
+      desc:Click to begin
+      icon:https://static.thenounproject.com/png/788246-200.png
+      on click:
+        startgame is 1
+        hide this
+      end
 
 Resources
 
@@ -272,3 +281,4 @@ Buttons
   [i:teambuttoninit %teamid="team1" %teamname="Team One"]
   [i:teambuttoninit %teamid="team2" %teamname="Team Two"]
   [i:teambuttoninit %teamid="team3" %teamname="Team Three"]
+  [i:startbutton %text="Start Game"]
