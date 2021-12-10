@@ -29,7 +29,8 @@ CSS
   }
   .teams
   {
-    height:200%
+    height:200%;
+    font-size: 16px;
   }
   .team1
   {
