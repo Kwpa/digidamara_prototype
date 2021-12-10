@@ -257,7 +257,7 @@ Resources
     [i:schedevent %schedtime="2" %eventname="SYSTEM:" %amessage="<b>Welcome to DIGIDAMARA!</b>" %bmessage="<b>Welcome back to DIGIDAMARA!</b>" %prob="50%"]
     [i:schedevent %schedtime="4" %eventname="SYSTEM:" %amessage="Thanks for being here!"]
     [i:schedevent %schedtime="6" %eventname="SYSTEM:" %amessage="Click the start game button to begin!"]
-    [i:reveal %schedtime="6" "startbutton"]
+    [i:reveal %schedtime="6" $item="startbutton"]
     [i:pause %schedtime="6"]
     [i:schedevent %schedtime="9" %eventname="Unpaused" %amessage="Unpaused!"]
 
