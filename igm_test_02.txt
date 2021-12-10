@@ -216,7 +216,7 @@ Includes
   *include startbutton %text
     *startbutton
       name:[%text]
-      desc:Click to begin
+      desc:Click to begin.
       icon:https://static.thenounproject.com/png/3134226-200.png
       on click:
         startgame is 1
