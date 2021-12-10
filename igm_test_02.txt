@@ -88,7 +88,7 @@ Includes
       start with:[%health]
     end
     on tick:
-      if (teamsurvivalcount>=2)
+      if (teamsurvivalcount>=2 and )
         lose [%teamid]healthloss [%teamid]health
         if ([%teamid]health<0.5 and [%teamid]lives>=1)
           lose 1 [%teamid]lives
@@ -151,6 +151,11 @@ Includes
       tooltip origin:bottom
       tooltip class:red
       text:[%teamname] <//>(LIVES = [[%teamid]lives])<//>(HP = [[%teamid]health]/[[%teamid]maxhealth])
+      hidden
+      on tick:
+        if(startgame=1)
+        show this
+      end
       on click:
         if (energy>=1 and [%teamid]health>=1 and [%teamid]dead=0)
           yield [%teamid]sparkle sparks
@@ -238,6 +243,13 @@ Resources
   *teamsurvivalcount
     on start:
       start with:3
+    end
+
+// bools
+
+  *startgame
+    on start:
+      start with:0
     end
 
 // main resources
