@@ -30,7 +30,7 @@ CSS
   .teams
   {
     height:200%;
-    font-size: 16px;
+    font-size: 20px;
   }
   .team1
   {
