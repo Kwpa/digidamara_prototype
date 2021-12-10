@@ -187,6 +187,7 @@ Includes
   *include pause %schedtime
     on tick:
       if (eventtime=[%schedtime])
+        yield 1 eventtime
         paused is 1
       end
     end
@@ -248,8 +249,8 @@ Resources
     [i:schedevent %schedtime="2" %eventname="SYSTEM:" %amessage="<b>Welcome to DIGIDAMARA!</b>" %bmessage="<b>Welcome back to DIGIDAMARA!</b>" %prob="50%"]
     [i:schedevent %schedtime="4" %eventname="SYSTEM:" %amessage="Thanks for being here!"]
     [i:schedevent %schedtime="6" %eventname="SYSTEM:" %amessage="Click the start game button to begin!"]
-    [i:pause %schedtime="7"]
-    [i:schedevent %schedtime="8" %eventname="Unpaused" %amessage="Unpaused!"]
+    [i:pause %schedtime="6"]
+    [i:schedevent %schedtime="9" %eventname="Unpaused" %amessage="Unpaused!"]
 
 // conditionals
 
