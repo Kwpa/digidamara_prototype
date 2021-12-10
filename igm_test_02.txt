@@ -82,7 +82,54 @@ Layout
 
 Includes
 
-  *include teaminit %teamid %teamname %health="100" %refrhealth="50" %lives="3" %maxhealth="100" %healthboost="100" %healthloss="5" %clickcost="1" %sparkle="2"
+  *include teaminit %teamid %teamname %health="100" %refrhealth="50" %lives="3" %maxhealth="100" %healthboost="100" %healthloss="5" %clickcost="1" %sparkle="2" %feetwearout="1" %handswearout="1"
+
+    *[%teamid]feetwearout
+      name: [%teamname] foot wearout rate
+      on start:
+        start with:[%feetwearout]
+      end
+    *[%teamid]handswearout
+      name: [%teamname] hand wearout rate
+      on start:
+        start with:[%handswearout]
+      end
+    *[%teamid]feetitemspoorquality
+      name: [%teamname]'s volume of cheap shoes
+      class:energy
+      on start:
+        start with:100
+      end
+      on tick:
+        lose 5 this
+      end
+    *[%teamid]handsitemspoorquality
+      name: [%teamname]'s volume of cheap gloves
+      class:energy
+      on start:
+        start with:100
+      end
+      on tick:
+        lose 5 this
+      end
+    *[%teamid]feetitemsquality
+      name: [%teamname]'s volume of wellmade shoes
+      class:energy
+      on start:
+        start with:50
+      end
+      on tick:
+        lose 1 this
+      end
+    *[%teamid]handsitemsquality
+      name: [%teamname]'s volume of wellmade gloves
+      class:energy
+      on start:
+        start with:50
+      end
+      on tick:
+        lose 1 this
+      end
     *[%teamid]health
       name: [%teamname]
       on start:
@@ -90,11 +137,22 @@ Includes
       end
       on tick:
         if (teamsurvivalcount>=2 and startgame=1)
-          lose [%teamid]healthloss [%teamid]health
-          if ([%teamid]health<0.5 and [%teamid]lives>=1)
-            lose 1 [%teamid]lives
-            log [n:this] has lost a life. [[%teamid]lives-1] lives remaining!
-            [%teamid]health is [%refrhealth]
+          $feet=0
+          $hands=0
+          if ([%teamid]feetitemspoorquality=0 and [%teamid]feetitemsgoodquality=0)
+            $feet=1
+          end
+          if ([%teamid]handsitemspoorquality=0 and [%teamid]handsitemsgoodquality=0)
+            $hands=1
+          end
+          if ($feet+$hands=2)
+            $healthlosstotal=$feet+$hands
+            lose [%teamid]healthloss [%teamid]health
+            if ([%teamid]health<0.5 and [%teamid]lives>=1)
+              lose 1 [%teamid]lives
+              log [n:this] has lost a life. [[%teamid]lives-1] lives remaining!
+              [%teamid]health is [%refrhealth]
+            end
           end
         end
       end
