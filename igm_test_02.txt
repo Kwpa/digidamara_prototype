@@ -94,7 +94,7 @@ Includes
       on start:
         start with:[%handswearout]
       end
-    *[%teamid]feetitemspoorquality
+    *[%teamid]handsitemspq
       name: [%teamname]'s volume of cheap shoes
       class:energy
       on start:
@@ -103,7 +103,7 @@ Includes
       on tick:
         lose 5 this
       end
-    *[%teamid]handsitemspoorquality
+    *[%teamid]handsitemspq
       name: [%teamname]'s volume of cheap gloves
       class:energy
       on start:
@@ -112,7 +112,7 @@ Includes
       on tick:
         lose 5 this
       end
-    *[%teamid]feetitemsquality
+    *[%teamid]feetitemsgq
       name: [%teamname]'s volume of wellmade shoes
       class:energy
       on start:
@@ -121,7 +121,7 @@ Includes
       on tick:
         lose 1 this
       end
-    *[%teamid]handsitemsquality
+    *[%teamid]handsitemsgq
       name: [%teamname]'s volume of wellmade gloves
       class:energy
       on start:
@@ -139,10 +139,10 @@ Includes
         if (teamsurvivalcount>=2 and startgame=1)
           $feet=0
           $hands=0
-          if ([%teamid]feetitemspoorquality=0 and [%teamid]feetitemsgoodquality=0)
+          if ([%teamid]handsitemspq=0 and [%teamid]feetitemsgoodquality=0)
             $feet=1
           end
-          if ([%teamid]handsitemspoorquality=0 and [%teamid]handsitemsgoodquality=0)
+          if ([%teamid]handsitemspq=0 and [%teamid]handsitemsgoodquality=0)
             $hands=1
           end
           if ($feet+$hands=2)
