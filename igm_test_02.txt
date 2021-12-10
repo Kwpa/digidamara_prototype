@@ -195,7 +195,7 @@ Includes
   *include reveal %schedtime %item
     on tick:
       if (eventtime=[%schedtime])
-        show item
+        show [%item]
       end
     end
 
