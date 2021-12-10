@@ -154,7 +154,8 @@ Includes
       hidden
       on tick:
         if (startgame=1)
-        show this
+          show this
+        end
       end
       on click:
         if (energy>=1 and [%teamid]health>=1 and [%teamid]dead=0)
