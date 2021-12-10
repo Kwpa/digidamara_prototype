@@ -94,7 +94,7 @@ Includes
       on start:
         start with:[%handswearout]
       end
-    *[%teamid]handsitemspq
+    *[%teamid]feetitemspq
       name: [%teamname]'s volume of cheap shoes
       class:energy
       on start:
@@ -139,10 +139,10 @@ Includes
         if (teamsurvivalcount>=2 and startgame=1)
           $feet=0
           $hands=0
-          if ([%teamid]handsitemspq=0 and [%teamid]feetitemsgoodquality=0)
+          if ([%teamid]feetitemspq=0 and [%teamid]feetitemsgq=0)
             $feet=1
           end
-          if ([%teamid]handsitemspq=0 and [%teamid]handsitemsgoodquality=0)
+          if ([%teamid]handsitemspq=0 and [%teamid]handsitemsgq=0)
             $hands=1
           end
           if ($feet+$hands=2)
