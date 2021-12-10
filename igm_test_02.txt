@@ -184,6 +184,13 @@ Includes
       end
     end
 
+  *include pause %schedtime
+    on tick:
+      if (eventtime=[%schedtime])
+        paused is 1
+      end
+    end
+
   *include cndevent %condition %eventname %amessage %bmessage="null" %abprob="100%"
     *[%eventname]
     start with:1
@@ -221,6 +228,7 @@ Includes
       class:team2
       on click:
         startgame is 1
+        paused is 0
         hide this
       end
 
@@ -230,14 +238,18 @@ Resources
 
   *eventtime
     on tick:
-      yield 1 eventtime
+      if (paused=0)
+        yield 1 eventtime
+      end
     end
 
     // !! put all scheduled events here //
 
-    [i:schedevent %schedtime="2" %eventname="event1" %amessage="<b>Welcome to DIGIDAMARA!</b>" %bmessage="<b>Welcome back to DIGIDAMARA!</b>" %prob="50%"]
-    [i:schedevent %schedtime="4" %eventname="Event mega" %amessage="Click on your favourite team to keep them alive!"]
-    [i:schedevent %schedtime="6" %eventname="Event mega" %amessage="You have a limited number of clicks (called energy!)"]
+    [i:schedevent %schedtime="2" %eventname="SYSTEM:" %amessage="<b>Welcome to DIGIDAMARA!</b>" %bmessage="<b>Welcome back to DIGIDAMARA!</b>" %prob="50%"]
+    [i:schedevent %schedtime="4" %eventname="SYSTEM:" %amessage="Thanks for being here!"]
+    [i:schedevent %schedtime="6" %eventname="SYSTEM:" %amessage="Click the start game button to begin!"]
+    [i:pause %schedtime="7"]
+    [i:schedevent %schedtime="8" %eventname="Unpaused" %amessage="Unpaused!"]
 
 // conditionals
 
@@ -259,6 +271,11 @@ Resources
 // bools
 
   *startgame
+    on start:
+      start with:0
+    end
+
+  *paused
     on start:
       start with:0
     end
