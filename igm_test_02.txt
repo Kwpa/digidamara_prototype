@@ -68,7 +68,7 @@ CSS
   #box-upgrades{background:rgba(0,0,0,0.3);}
   .teams
   {
-    height:200%;
+    height:100%;
     font-size: 20px;
   }
   .team1
@@ -90,7 +90,7 @@ CSS
     position:absolute;
     top:30%;
     left:80%;
-    background-color: Gold;
+    background-color: GoldenRod;
   }
   .energy
   {
@@ -109,7 +109,7 @@ CSS
   }
   .team3profile
   {
-    background-color: Gold;
+    background-color: GoldenRod;
     font-size:18px;
   }
   .sparks
@@ -121,6 +121,12 @@ CSS
   {
     width:200px;
     height:200px;
+  }
+  .customicon
+  {
+    width: 50%;
+    height: 50%;
+    object-fit: contain;
   }
 
 Layout
@@ -285,7 +291,7 @@ Includes
     *[%teamid]button
       name:[%teamname]
       desc:Click [%teamname] to generate Sparks, costs Energy
-      class:[%teamid] team
+      class:[%teamid] teams customicon
       icon:https://static.thenounproject.com/png/788246-200.png
       tooltip origin:bottom
       tooltip class:red
