@@ -21,9 +21,10 @@ CSS
   	position:absolute;
   }
 
-  #box-main
+  #box-Items
   {
     height:300px;
+    
   }
 
   #box-logBox
