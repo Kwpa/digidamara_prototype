@@ -147,9 +147,9 @@ Includes
           end
           $itemcheck=$feet+$hands
           if ($itemcheck=2)
-            log Lose health
-            $healthlosstotal=$feet+$hands
+            log Lose health W
             lose [%teamid]healthloss [%teamid]health
+            log Lose health X
             if ([%teamid]health<0.5 and [%teamid]lives>=1)
               lose 1 [%teamid]lives
               log [n:this] has lost a life. [[%teamid]lives-1] lives remaining!
