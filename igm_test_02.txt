@@ -20,24 +20,7 @@ CSS
   	width:100%;
   	position:absolute;
   }
-  #box-store
-  {
-    left:80%;
-    top:0px;
-    bottom:0px;
-    right:100px;
-    width:100%;
-    position:absolute;
-  }
-  #box-items
-  {
-    left:80%;
-    top:0px;
-    bottom:0px;
-    right:100px;
-    width:100%;
-    position:absolute;
-  }
+
   #box-logBox
   {
     top:70%;
