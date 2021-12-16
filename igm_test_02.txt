@@ -29,6 +29,15 @@ CSS
     width:100%;
     position:absolute;
   }
+  #box-items
+  {
+    left:80%;
+    top:0px;
+    bottom:0px;
+    right:100px;
+    width:100%;
+    position:absolute;
+  }
   #box-logBox
   {
     top:70%;
@@ -97,8 +106,6 @@ Layout
 Items
   *sword
     name:A sword
-    icon:https://static.thenounproject.com/png/788246-200.png
-    start with
 
 
 Includes
