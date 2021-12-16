@@ -145,7 +145,7 @@ Layout
     contains:upgrades
     *upgrades
       contains:Upgrades
-      header:Upgrades
+      header:Profiles
 
 
 Includes
@@ -175,6 +175,7 @@ Includes
       end
     *[%teamid]feetitemspq
       name: [%teamname] cheap shoes
+      hidden
       class:[%teamid]profile
       on start:
         start with:100
@@ -186,6 +187,7 @@ Includes
       end
     *[%teamid]handsitemspq
       name: [%teamname] cheap gloves
+      hidden
       class:[%teamid]profile
       on start:
         start with:100
@@ -197,6 +199,7 @@ Includes
       end
     *[%teamid]feetitemsgq
       name: [%teamname] wellmade shoes
+      hidden
       class:[%teamid]profile
       on start:
         start with:50
@@ -208,6 +211,7 @@ Includes
       end
     *[%teamid]handsitemsgq
       name: [%teamname] wellmade gloves
+      hidden
       class:[%teamid]profile
       on start:
         start with:50
