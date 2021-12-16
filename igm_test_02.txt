@@ -129,10 +129,13 @@ Includes
     *[%teamid]title
       name:-- [%teamname] Profile --
       start with
+      class:energy
     *[%teamid]bio
       name:Bio:
       desc:[%description]
       start with
+      class:energy
+      icon:https://s.alicdn.com/@img/tfs/TB1IxWhvYY1gK0jSZTEXXXDQVXa-24-24.svg
 
   *include teaminit %teamid %teamname %health="100" %refrhealth="50" %lives="3" %maxhealth="100" %healthboost="100" %healthloss="5" %clickcost="1" %sparkle="2" %feetwearout="1" %handswearout="1"
     *[%teamid]feetwearout
