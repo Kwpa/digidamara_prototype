@@ -141,7 +141,7 @@ Includes
             lose 5 this
             if ([%teamid]health<0.5 and [%teamid]lives>=1)
               lose 1 [%teamid]lives
-              log [n:this] has lost a life. [[%teamid]lives-1] lives remaining!
+              log 😭 [%teamname] has lost a life. [[%teamid]lives-1] lives remaining!
               [%teamid]health is [%refrhealth]
             end
           end
