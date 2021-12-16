@@ -98,7 +98,7 @@ Items
   *sword
     name:A sword
     icon:https://static.thenounproject.com/png/788246-200.png
-    start with this
+    start with
 
 
 Includes
