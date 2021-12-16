@@ -137,6 +137,7 @@ Includes
       end
       on tick:
         if (teamsurvivalcount>=2 and startgame=1)
+          lose 5 this
           $feet=0
           $hands=0
           if ([%teamid]feetitemspq=0 and [%teamid]feetitemsgq=0)
