@@ -100,14 +100,17 @@ CSS
   .team1profile
   {
     background-color: FireBrick;
+    font-size:18px;
   }
   .team2profile
   {
     background-color: ForestGreen;
+    font-size:18px;
   }
   .team3profile
   {
     background-color: Gold;
+    font-size:18px;
   }
   .sparks
   {
@@ -139,16 +142,16 @@ Layout
 
 
 Includes
-  *include teamprofile %teamid %teamname %description %class
+  *include teamprofile %teamid %teamname %description
     *[%teamid]title
       name:-- [%teamname] Profile --
       start with
-      class:energy
+      class:[%teamid]profile
     *[%teamid]bio
       name:Bio:
       desc:[%description]
       start with
-      class:[%class]
+      class:[%teamid]profile
 
   *include teaminit %teamid %teamname %health="100" %refrhealth="50" %lives="3" %maxhealth="100" %healthboost="100" %healthloss="5" %clickcost="1" %sparkle="2" %feetwearout="1" %handswearout="1"
     *[%teamid]feetwearout
@@ -165,7 +168,7 @@ Includes
       end
     *[%teamid]feetitemspq
       name: [%teamname] cheap shoes
-      class:energy
+      class:[%teamid]profile
       on start:
         start with:100
       end
@@ -176,7 +179,7 @@ Includes
       end
     *[%teamid]handsitemspq
       name: [%teamname] cheap gloves
-      class:energy
+      class:[%teamid]profile
       on start:
         start with:100
       end
@@ -187,7 +190,7 @@ Includes
       end
     *[%teamid]feetitemsgq
       name: [%teamname] wellmade shoes
-      class:energy
+      class:[%teamid]profile
       on start:
         start with:50
       end
@@ -198,7 +201,7 @@ Includes
       end
     *[%teamid]handsitemsgq
       name: [%teamname] wellmade gloves
-      class:energy
+      class:[%teamid]profile
       on start:
         start with:50
       end
