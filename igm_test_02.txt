@@ -119,7 +119,7 @@ Includes
         start with:50
       end
       on tick:
-        lose 1 this
+        lose 4 this
       end
     *[%teamid]handsitemsgq
       name: [%teamname]'s volume of wellmade gloves
@@ -128,7 +128,7 @@ Includes
         start with:50
       end
       on tick:
-        lose 1 this
+        lose 4 this
       end
     *[%teamid]health
       name: [%teamname]
@@ -148,7 +148,7 @@ Includes
           $itemcheck=$feet+$hands
           if ($itemcheck=2)
             log Lose health W
-            lose [%teamid]healthloss [%teamid]health
+            lose 5 [%teamid]health
             log Lose health X
             if ([%teamid]health<0.5 and [%teamid]lives>=1)
               lose 1 [%teamid]lives
