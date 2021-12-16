@@ -132,10 +132,6 @@ CSS
   {
   	background:#6cf;
   }
-  .thing
-  {
-  	opacity:1.0;
-  }
 
 Layout
   *main
