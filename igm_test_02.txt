@@ -438,9 +438,9 @@ Resources
 
 
 Upgrades
-  [i:teamprofile %teamid="team1" %teamname="Team One" %description="Alpha = 1, Beta = 3, Gamma = 10"]
-  [i:teamprofile %teamid="team2" %teamname="Team Two" %description="Alpha = 1, Beta = 3, Gamma = 10"]
-  [i:teamprofile %teamid="team3" %teamname="Team Three" %description="Alpha = 1, Beta = 3, Gamma = 10"]
+  [i:teamprofile %teamid="team1" %teamname="Team One" %description="Them. Alpha = 1, Beta = 3, Gamma = 10"]
+  [i:teamprofile %teamid="team2" %teamname="Team Two" %description="This. Alpha = 1, Beta = 3, Gamma = 10"]
+  [i:teamprofile %teamid="team3" %teamname="Team Three" %description="That. Alpha = 1, Beta = 3, Gamma = 10"]
 
 
 
