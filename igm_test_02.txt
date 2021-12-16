@@ -89,10 +89,10 @@ Layout
       contains:Log
       class:bottom
   *store
-    contains: items
-  *items
-    contains:Items
-    header:Items
+    contains:items
+    *items
+      contains:Items
+      header:Items
 
 
 Items
