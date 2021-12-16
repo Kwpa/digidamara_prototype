@@ -66,16 +66,17 @@ CSS
   }
   #box-buildings{background:linear-gradient(to right,rgba(0,0,0,0) 0%,rgba(0,0,0,0.25) 20%);}
   #box-upgrades{background:rgba(0,0,0,0.3);}
-  .teams
+  .startbutton
   {
-    height:100%;
-    font-size: 20px;
+    position:absolute;
+    top:30%;
+    left:50%;
   }
   .team1
   {
     position:absolute;
     top:30%;
-    left:20%;
+    left:10%;
     background-color: FireBrick;
   }
   .team2
@@ -89,7 +90,7 @@ CSS
   {
     position:absolute;
     top:30%;
-    left:80%;
+    left:70%;
     background-color: GoldenRod;
   }
   .energy
@@ -390,7 +391,8 @@ Includes
       name:[%text]
       desc:Click to begin.
       icon:https://static.thenounproject.com/png/3134226-200.png
-      class:team2
+      class:startbutton
+      icon class:customicon
       hidden
       on click:
         startgame is 1
@@ -479,7 +481,7 @@ Upgrades
   [i:teamprofile %teamid="team13" %teamname="Team One" %description="Them. Alpha = 1, Beta = 3, Gamma = 10"]
   [i:teamprofile %teamid="team14" %teamname="Team Two" %description="This. Alpha = 1, Beta = 3, Gamma = 10"]
   [i:teamprofile %teamid="team15" %teamname="Team Three" %description="That. Alpha = 1, Beta = 3, Gamma = 10"]
-  
+
 
 Buttons
 
