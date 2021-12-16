@@ -138,10 +138,10 @@ Includes
       on tick:
         if ([%teamid]feetitemspq=0 and [%teamid]feetitemsgq=0 and [%teamid]handsitemspq=0 and [%teamid]handsitemsgq=0)
           if (teamsurvivalcount>=2 and startgame=1)
-            lose 5 this
+            lose [%teamid]healthloss this
             if ([%teamid]health<0.5 and [%teamid]lives>=1)
               lose 1 [%teamid]lives
-              log 😭 [%teamname] has lost a life. [[%teamid]lives-1] lives remaining!
+              log 😭 [%teamname] has l̴l̸͈͊ȍ̴̖s̶̤̈t̵͚̓ ̸̯̋a̴̢͝ ̸̺̐l̶̜̽í̴͎f̴͚̆e̸̘̬̿. [[%teamid]lives-1] lives remaining!
               [%teamid]health is [%refrhealth]
             end
           end
