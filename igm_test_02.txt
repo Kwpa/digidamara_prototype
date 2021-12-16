@@ -15,11 +15,21 @@ CSS
   	left:0px;
   	top:0px;
   	bottom:0px;
-    right:0px;
+    right:20%;
   	overflow:hidden;
   	width:100%;
   	position:absolute;
-    }
+  }
+  #box-store
+  {
+    left:80%;
+    top:0px;
+    bottom:0px;
+    right:100px;
+    overflow:hidden;
+    width:100%;
+    position:absolute;
+  }
   #box-logBox
   {
     top:70%;
@@ -68,19 +78,22 @@ CSS
   }
 
 Layout
-  *logBox
-    contains:Log
-    class:bottom
-
   *main
-    contains:res, buttons, logBox, items
-  *res
-    contains:Resources
-    class:fullWidth
-  *buttons
-    contains:Buttons
+    contains:res, buttons, logBox
+    *res
+      contains:Resources
+      class:fullWidth
+    *buttons
+      contains:Buttons
+    *logBox
+      contains:Log
+      class:bottom
+  *store
+    contains: items
   *items
     contains:Items
+    header:Items
+
 
 Items
   *sword
@@ -316,7 +329,7 @@ Includes
         startgame is 1
         paused is 0
         hide this
-        equip sword
+        gain sword
       end
 
 Resources
