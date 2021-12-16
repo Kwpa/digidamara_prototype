@@ -395,7 +395,7 @@ Includes
 
   *include makeround %roundnumber %dancetime %breaktime
     on tick:
-      if(roundnumber=[%roundnumber])
+      if (roundnumber=[%roundnumber])
         if (breaktime=[%breaktime])
           dancingon=1
           yield 1 roundnumber
