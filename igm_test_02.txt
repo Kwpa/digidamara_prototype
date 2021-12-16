@@ -131,16 +131,18 @@ Includes
 
     *[%teamid]feetwearout
       name: [%teamname] foot wearout rate
+      hidden
       on start:
         start with:[%feetwearout]
       end
     *[%teamid]handswearout
+      hidden
       name: [%teamname] hand wearout rate
       on start:
         start with:[%handswearout]
       end
     *[%teamid]feetitemspq
-      name: [%teamname]'s volume of cheap shoes
+      name: [%teamname] cheap shoes
       class:energy
       on start:
         start with:100
@@ -151,7 +153,7 @@ Includes
         end
       end
     *[%teamid]handsitemspq
-      name: [%teamname]'s volume of cheap gloves
+      name: [%teamname] cheap gloves
       class:energy
       on start:
         start with:100
@@ -162,7 +164,7 @@ Includes
         end
       end
     *[%teamid]feetitemsgq
-      name: [%teamname]'s volume of wellmade shoes
+      name: [%teamname] wellmade shoes
       class:energy
       on start:
         start with:50
@@ -173,7 +175,7 @@ Includes
         end
       end
     *[%teamid]handsitemsgq
-      name: [%teamname]'s volume of wellmade gloves
+      name: [%teamname] wellmade gloves
       class:energy
       on start:
         start with:50
@@ -184,6 +186,7 @@ Includes
         end
       end
     *[%teamid]health
+      hidden
       //name: [%teamname]
       on start:
         start with:[%health]
@@ -201,10 +204,12 @@ Includes
         end
       end
     *[%teamid]dead
+      hidden
       on start:
         start with:0
       end
     *[%teamid]lives
+      hidden
       on start:
         start with:[%lives]
       end
@@ -221,26 +226,32 @@ Includes
         end
       end
     *[%teamid]maxhealth
+      hidden
       on start:
         start with:[%maxhealth]
       end
     *[%teamid]healthboost
+      hidden
       on start:
         start with:[%healthboost]
       end
     *[%teamid]healthloss
+      hidden
       on start:
         start with:[%healthloss]
       end
     *[%teamid]clickcost
+      hidden
       on start:
         start with:[%clickcost]
       end
     *[%teamid]sparkle
+      hidden
       on start:
         start with:[%sparkle]
       end
     *[%teamid]clickcount
+      hidden
       on start:
         start with:0
       end
