@@ -34,7 +34,6 @@ CSS
     width:50%;
     height:30%;
     font-size:17px;
-    color:DodgerBlue;
   }
   #box-store
   {
@@ -128,6 +127,10 @@ CSS
     width:128px;
     height:128px;
     background-size: 128px 128px;
+  }
+  .thing
+  {
+    background-color:Black;
   }
 
 Layout
