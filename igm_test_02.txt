@@ -138,24 +138,10 @@ Includes
       on tick:
         if (teamsurvivalcount>=2 and startgame=1)
           lose 5 this
-          $feet=0
-          $hands=0
-          if ([%teamid]feetitemspq=0 and [%teamid]feetitemsgq=0)
-            $feet=1
-          end
-          if ([%teamid]handsitemspq=0 and [%teamid]handsitemsgq=0)
-            $hands=1
-          end
-          $itemcheck=$feet+$hands
-          if ($itemcheck=2)
-            log Lose health W
-            lose 5 this
-            log Lose health X
-            if ([%teamid]health<0.5 and [%teamid]lives>=1)
-              lose 1 [%teamid]lives
-              log [n:this] has lost a life. [[%teamid]lives-1] lives remaining!
-              [%teamid]health is [%refrhealth]
-            end
+          if ([%teamid]health<0.5 and [%teamid]lives>=1)
+            lose 1 [%teamid]lives
+            log [n:this] has lost a life. [[%teamid]lives-1] lives remaining!
+            [%teamid]health is [%refrhealth]
           end
         end
       end
