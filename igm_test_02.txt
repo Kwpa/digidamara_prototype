@@ -148,7 +148,7 @@ Includes
           $itemcheck=$feet+$hands
           if ($itemcheck=2)
             log Lose health W
-            lose 5 [%teamid]health
+            lose 5 this
             log Lose health X
             if ([%teamid]health<0.5 and [%teamid]lives>=1)
               lose 1 [%teamid]lives
