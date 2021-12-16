@@ -292,7 +292,7 @@ Includes
       desc:Click [%teamname] to generate Sparks, costs Energy
       class:[%teamid] teams
       icon:https://static.thenounproject.com/png/788246-200.png
-      icon class: customicon
+      icon class:customicon
       tooltip origin:bottom
       tooltip class:red
       text:[%teamname] <//>(LIVES = [[%teamid]lives])<//>(HP = [[%teamid]health]/[[%teamid]maxhealth])
