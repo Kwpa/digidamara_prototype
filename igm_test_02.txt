@@ -128,9 +128,9 @@ CSS
     height:128px;
     background-size: 128px 128px;
   }
-  .thing
+  .thing:hover,.thing.lit
   {
-    background-color:Black;
+  	background:#6cf;
   }
 
 Layout
