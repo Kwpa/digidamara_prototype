@@ -75,25 +75,39 @@ CSS
   {
     position:absolute;
     top:30%;
-    left:20%
+    left:20%;
+    background-color: FireBrick;
   }
   .team2
   {
     position:absolute;
     top:30%;
-    left:50%
+    left:50%;
+    background-color: ForestGreen;
   }
   .team3
   {
     position:absolute;
     top:30%;
-    left:80%
+    left:80%;
+    background-color: Gold;
   }
   .energy
   {
     font-size:20px;
     background-color: DodgerBlue;
-
+  }
+  .team1profile
+  {
+    background-color: FireBrick;
+  }
+  .team2profile
+  {
+    background-color: ForestGreen;
+  }
+  .team3profile
+  {
+    background-color: Gold;
   }
   .sparks
   {
@@ -125,7 +139,7 @@ Layout
 
 
 Includes
-  *include teamprofile %teamid %teamname %description
+  *include teamprofile %teamid %teamname %description %class
     *[%teamid]title
       name:-- [%teamname] Profile --
       start with
@@ -134,8 +148,7 @@ Includes
       name:Bio:
       desc:[%description]
       start with
-      class:energy
-      icon:https://s.alicdn.com/@img/tfs/TB1IxWhvYY1gK0jSZTEXXXDQVXa-24-24.svg
+      class:[%class]
 
   *include teaminit %teamid %teamname %health="100" %refrhealth="50" %lives="3" %maxhealth="100" %healthboost="100" %healthloss="5" %clickcost="1" %sparkle="2" %feetwearout="1" %handswearout="1"
     *[%teamid]feetwearout
@@ -441,9 +454,9 @@ Resources
 
 
 Upgrades
-  [i:teamprofile %teamid="team1" %teamname="Team One" %description="Them. Alpha = 1, Beta = 3, Gamma = 10"]
-  [i:teamprofile %teamid="team2" %teamname="Team Two" %description="This. Alpha = 1, Beta = 3, Gamma = 10"]
-  [i:teamprofile %teamid="team3" %teamname="Team Three" %description="That. Alpha = 1, Beta = 3, Gamma = 10"]
+  [i:teamprofile %teamid="team1" %teamname="Team One" %description="Them. Alpha = 1, Beta = 3, Gamma = 10" %class="team1profile"]
+  [i:teamprofile %teamid="team2" %teamname="Team Two" %description="This. Alpha = 1, Beta = 3, Gamma = 10" %class="team2profile"]
+  [i:teamprofile %teamid="team3" %teamname="Team Three" %description="That. Alpha = 1, Beta = 3, Gamma = 10" %class="team3profile"]
 
 
 
