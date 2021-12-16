@@ -124,8 +124,8 @@ CSS
   }
   .customicon
   {
-    width: 50%;
-    height: 50%;
+    width: 128px;
+    height: 128px;
   }
 
 Layout
@@ -290,8 +290,9 @@ Includes
     *[%teamid]button
       name:[%teamname]
       desc:Click [%teamname] to generate Sparks, costs Energy
-      class:[%teamid] teams customicon
+      class:[%teamid] teams
       icon:https://static.thenounproject.com/png/788246-200.png
+      icon class: customicon
       tooltip origin:bottom
       tooltip class:red
       text:[%teamname] <//>(LIVES = [[%teamid]lives])<//>(HP = [[%teamid]health]/[[%teamid]maxhealth])
