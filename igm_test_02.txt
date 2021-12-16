@@ -21,6 +21,11 @@ CSS
   	position:absolute;
   }
 
+  #box-main
+  {
+    height:300px;
+  }
+
   #box-logBox
   {
     top:70%;
