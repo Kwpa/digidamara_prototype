@@ -101,7 +101,9 @@ Includes
         start with:100
       end
       on tick:
-        lose 5 this
+        if (startgame=1)
+          lose 5 this
+        end
       end
     *[%teamid]handsitemspq
       name: [%teamname]'s volume of cheap gloves
@@ -110,7 +112,9 @@ Includes
         start with:100
       end
       on tick:
-        lose 5 this
+        if (startgame=1)
+          lose 5 this
+        end
       end
     *[%teamid]feetitemsgq
       name: [%teamname]'s volume of wellmade shoes
@@ -119,7 +123,9 @@ Includes
         start with:50
       end
       on tick:
-        lose 4 this
+        if (startgame=1)
+          lose 3 this
+        end
       end
     *[%teamid]handsitemsgq
       name: [%teamname]'s volume of wellmade gloves
@@ -128,7 +134,9 @@ Includes
         start with:50
       end
       on tick:
-        lose 4 this
+        if (startgame=1)
+          lose 3 this
+        end
       end
     *[%teamid]health
       //name: [%teamname]
