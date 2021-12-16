@@ -83,7 +83,7 @@ CSS
   {
     position:absolute;
     top:30%;
-    left:35%;
+    left:40%;
     background-color: ForestGreen;
   }
   .team3
