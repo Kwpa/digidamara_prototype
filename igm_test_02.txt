@@ -34,7 +34,7 @@ CSS
     width:50%;
     height:30%;
     font-size:17px;
-    backgroundColor:DodgerBlue;
+    color:DodgerBlue;
   }
   #box-store
   {
