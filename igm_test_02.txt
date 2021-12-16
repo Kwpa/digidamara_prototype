@@ -401,6 +401,8 @@ Includes
           yield 1 roundnumber
         else if (dancetime=[%dancetime])
           dancingon=0
+        else
+          //
         end
       end
     end
