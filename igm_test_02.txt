@@ -316,7 +316,7 @@ Includes
         startgame is 1
         paused is 0
         hide this
-        gain sword
+        equip sword
       end
 
 Resources
