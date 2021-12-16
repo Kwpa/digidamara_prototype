@@ -21,12 +21,6 @@ CSS
   	position:absolute;
   }
 
-  #box-items
-  {
-    height:300px;
-
-  }
-
   #box-logBox
   {
     top:70%;
@@ -87,7 +81,7 @@ Layout
       class:bottom
   *store
     contains:upgrades
-    *items
+    *upgrades
       contains:Upgrades
       header:Upgrades
 
