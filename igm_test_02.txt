@@ -124,7 +124,9 @@ CSS
   }
   .customicon
   {
-    background-size: 48px 48px;
+    width:128px;
+    height:128px;
+    background-size: 128px 128px;
   }
 
 Layout
