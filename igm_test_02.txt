@@ -73,12 +73,19 @@ Layout
     class:bottom
 
   *main
-    contains:res, buttons, logBox
+    contains:res, buttons, logBox, items
   *res
     contains:Resources
     class:fullWidth
   *buttons
     contains:Buttons
+  *items
+    contains:Items
+
+Items
+  *sword
+    name:A sword
+
 
 Includes
 
@@ -149,7 +156,7 @@ Includes
             lose [%teamid]healthloss this
             if ([%teamid]health<0.5 and [%teamid]lives>=1)
               lose 1 [%teamid]lives
-              log 😭 [%teamname] has l̴l̸͈͊ȍ̴̖s̶̤̈t̵͚̓ ̸̯̋a̴̢͝ ̸̺̐l̶̜̽í̴͎f̴͚̆e̸̘̬̿. [[%teamid]lives-1] lives remaining!
+              log 😭 [%teamname] has lost a life. [[%teamid]lives-1] lives remaining!
               [%teamid]health is [%refrhealth]
             end
           end
@@ -171,7 +178,7 @@ Includes
           [%teamid]health is 0
         end
         if (teamsurvivalcount=1 and [%teamid]dead=0)
-          log All other contestants eliminated! [%teamname] wins!
+          log All other contestants eliminated! 👑 [%teamname] wins! 👑
           [%teamid]dead is 2
         end
       end
@@ -242,6 +249,17 @@ Includes
       end
     end
 
+  *include repeatevent %repeattime %eventname %amessage %bmessage="null" %prob="100%"
+    on tick:
+      if (eventtime%[%repeattime]=0)
+        if (chance([%prob])=1)
+          log [%eventname] [%amessage]
+        else
+          log [%eventname] [%bmessage]
+        end
+      end
+    end
+
   *include pause %schedtime
     on tick:
       if (eventtime=[%schedtime])
@@ -297,6 +315,7 @@ Includes
         startgame is 1
         paused is 0
         hide this
+        gain sword
       end
 
 Resources
