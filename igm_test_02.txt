@@ -86,15 +86,16 @@ Layout
       contains:Log
       class:bottom
   *store
-    contains:items
+    contains:upgrades
     *items
-      contains:Items
-      header:Items
+      contains:Upgrades
+      header:Upgrades
 
 
-Items
-  *sword
-    name:A sword
+Upgrades
+  *biggershoes
+    name:Big Shoes
+    req:10 eventtime
 
 
 Includes
