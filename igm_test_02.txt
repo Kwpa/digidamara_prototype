@@ -131,7 +131,7 @@ Includes
         lose 4 this
       end
     *[%teamid]health
-      name: [%teamname]
+      //name: [%teamname]
       on start:
         start with:[%health]
       end
