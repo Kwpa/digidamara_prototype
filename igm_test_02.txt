@@ -426,6 +426,7 @@ Includes
         paused is 0
         hide this
         roundnumber is 1
+        dancingon is 1
       end
 
   *include otherplayer %username %timeon %timeoff %engagement %favteamid="100%"
@@ -471,7 +472,7 @@ Resources
 
   *dancetime
     on tick:
-      if (dancingon=1 and paused=0)
+      if (dancingon=1 and paused=0 and startgame=1)
         yield 1 this
       else
         this is 0
@@ -480,7 +481,7 @@ Resources
 
   *breaktime
     on tick:
-      if (dancingon=0 and paused=0)
+      if (dancingon=0 and paused=0 and startgame=1)
         yield 1 this
       else
         this is 0
