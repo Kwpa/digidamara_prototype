@@ -474,6 +474,10 @@ Resources
     on tick:
       if (dancingon=1 and paused=0 and startgame=1)
         yield 1 this
+        $roundnum=roundnumber
+        if (dancetime=1)
+          toast Round [$roundnum] - Dance Time!
+        end
       else
         this is 0
       end
@@ -483,6 +487,10 @@ Resources
     on tick:
       if (dancingon=0 and paused=0 and startgame=1)
         yield 1 this
+        $roundnum=roundnumber
+        if (breaktime=1)
+          toast Round [$roundnum] - Dance Time!
+        end
       else
         this is 0
       end
