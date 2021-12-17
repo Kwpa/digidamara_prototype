@@ -489,7 +489,7 @@ Resources
         yield 1 this
         $roundnum=roundnumber
         if (breaktime=1)
-          toast Round [$roundnum] - Dance Time!
+          toast Round [$roundnum] - Break Time!
         end
       else
         this is 0
