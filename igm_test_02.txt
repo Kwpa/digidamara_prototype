@@ -122,7 +122,13 @@ CSS
     width:200px;
     height:200px;
   }
-  .customicon
+  .teamicon
+  {
+    width:128px;
+    height:128px;
+    background-size: 128px 128px;
+  }
+  .startbuttonicon
   {
     width:128px;
     height:128px;
@@ -301,7 +307,7 @@ Includes
       desc:Click [%teamname] to generate Sparks, costs Energy
       class:[%teamid]
       icon:https://static.thenounproject.com/png/788246-200.png
-      icon class:customicon
+      icon class:teamicon
       tooltip origin:bottom
       tooltip class:red
       text:[%teamname] <//>(LIVES = [[%teamid]lives])<//>(HP = [[%teamid]health]/[[%teamid]maxhealth])
@@ -413,7 +419,7 @@ Includes
       desc:Click to begin.
       icon:https://static.thenounproject.com/png/3134226-200.png
       class:startbutton
-      icon class:customicon
+      icon class:startbuttonicon
       hidden
       on click:
         startgame is 1
@@ -462,7 +468,7 @@ Resources
 
 
   *dancingon
-    hidden
+    
 
   *dancetime
     on tick:
@@ -472,7 +478,6 @@ Resources
         this is 0
       end
     end
-    hidden
 
   *breaktime
     on tick:
@@ -482,7 +487,6 @@ Resources
         this is 0
       end
     end
-    hidden
 
 
 // conditionals
