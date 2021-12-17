@@ -459,7 +459,7 @@ Resources
     [i:schedevent %schedtime="9" %eventname="Unpaused" %amessage="Unpaused!"]
 
   *roundnumber
-    hidden
+
 
   *dancingon
     hidden
