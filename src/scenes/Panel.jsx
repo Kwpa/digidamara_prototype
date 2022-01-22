@@ -7,7 +7,7 @@ const Panel = (text = 'Todo', coupleID = 'A + B') => {
       <div class='section'>
 
         <div class='content' >
-          <h1 class='has-text-white'>Digidamara Prototype Larger Larger Larger Larger larger Larger</h1>
+          <h1 class='has-text-white'>Digidamara Prototype</h1>
         </div>
 
         <div class='level'>
