@@ -106,6 +106,7 @@ export default class CSSTestScene extends Phaser.Scene
 
     const game = document.getElementsByTagName('canvas')[0]
     game.style.setProperty('position', 'absolute');
+    game.style.setProperty('z-index', '-1');
     //game.style.setProperty('pointer-events', 'none');
 
     const music = this.sound.add('music-1', {loop: true});
