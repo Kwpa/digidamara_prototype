@@ -10,52 +10,107 @@ Settings
   background:https://ak.picdn.net/shutterstock/videos/1014299564/thumb/1.jpg
 
 CSS
+  #box-res.fullWidth
+  {
+    width:100%;
+    top:5%;
+    height:5%;
+    min-height:32px;
+    z-index:100;
+    position:absolute;
+  }
   #box-main
   {
   	left:0px;
   	top:0px;
   	bottom:0px;
-    right:20%;
   	overflow:hidden;
-  	width:100%;
+  	width:60%;
   	position:absolute;
   }
-
   #box-logBox
   {
     top:70%;
     width:50%;
     height:30%;
     font-size:17px;
-    backgroundColor:DodgerBlue;
   }
-  .teams
+  #box-store
   {
-    height:200%;
-    font-size: 20px;
+  	right:0px;
+  	top:0px;
+  	bottom:0px;
+  	width:40%;
+  	position:absolute;
+  }
+  #box-buildings,#box-upgrades
+  {
+  	top:0px;
+  	bottom:0px;
+  	width:50%;
+  	right:0%;
+  	overflow-x:hidden;
+  	overflow-y:scroll;
+  	padding-bottom:48px;/* this is to accommodate the info and settings buttons */
+  	position:absolute;
+  }
+  #box-buildings
+  {
+    right:50%;
+  }
+  .upgrade
+  {
+    width:100%;
+    font-size:17px;
+  }
+  #box-buildings{background:linear-gradient(to right,rgba(0,0,0,0) 0%,rgba(0,0,0,0.25) 20%);}
+  #box-upgrades{background:rgba(0,0,0,0.3);}
+  .startbutton
+  {
+    position:absolute;
+    top:30%;
+    left:50%;
   }
   .team1
   {
     position:absolute;
     top:30%;
-    left:20%
+    left:10%;
+    background-color: FireBrick;
   }
   .team2
   {
     position:absolute;
     top:30%;
-    left:50%
+    left:40%;
+    background-color: ForestGreen;
   }
   .team3
   {
     position:absolute;
     top:30%;
-    left:80%
+    left:70%;
+    background-color: GoldenRod;
   }
   .energy
   {
     font-size:20px;
     background-color: DodgerBlue;
+  }
+  .team1profile
+  {
+    background-color: FireBrick;
+    font-size:18px;
+  }
+  .team2profile
+  {
+    background-color: ForestGreen;
+    font-size:18px;
+  }
+  .team3profile
+  {
+    background-color: GoldenRod;
+    font-size:18px;
   }
   .sparks
   {
@@ -65,6 +120,27 @@ CSS
   .thing-icon,.particle
   {
     width:200px;
+    height:200px;
+  }
+  .teamicon
+  {
+    width:128px;
+    height:128px;
+    background-size: 128px 128px;
+  }
+  .startbuttonicon
+  {
+    width:128px;
+    height:128px;
+    background-size: 128px 128px;
+  }
+  .thing:hover,.thing.lit
+  {
+  	background:#6cf;
+  }
+  .toast
+  {
+    font-size:20px;
     height:200px;
   }
 
@@ -80,34 +156,41 @@ Layout
       contains:Log
       class:bottom
   *store
-    contains:items
-    *items
-      contains:Items
-      header:Items
-
-
-Items
-  *sword
-    name:A sword
+    contains:upgrades
+    *upgrades
+      contains:Upgrades
+      header:Profiles
 
 
 Includes
+  *include teamprofile %teamid %teamname %description
+    *[%teamid]title
+      name:-- [%teamname] Profile --
+      start with
+      class:[%teamid]profile
+    *[%teamid]bio
+      name:Bio:
+      desc:[%description]
+      start with
+      class:[%teamid]profile
 
   *include teaminit %teamid %teamname %health="100" %refrhealth="50" %lives="3" %maxhealth="100" %healthboost="100" %healthloss="5" %clickcost="1" %sparkle="2" %feetwearout="1" %handswearout="1"
-
     *[%teamid]feetwearout
       name: [%teamname] foot wearout rate
+      hidden
       on start:
         start with:[%feetwearout]
       end
     *[%teamid]handswearout
+      hidden
       name: [%teamname] hand wearout rate
       on start:
         start with:[%handswearout]
       end
     *[%teamid]feetitemspq
-      name: [%teamname]'s volume of cheap shoes
-      class:energy
+      name: [%teamname] cheap shoes
+      hidden
+      class:[%teamid]profile
       on start:
         start with:100
       end
@@ -117,8 +200,9 @@ Includes
         end
       end
     *[%teamid]handsitemspq
-      name: [%teamname]'s volume of cheap gloves
-      class:energy
+      name: [%teamname] cheap gloves
+      hidden
+      class:[%teamid]profile
       on start:
         start with:100
       end
@@ -128,8 +212,9 @@ Includes
         end
       end
     *[%teamid]feetitemsgq
-      name: [%teamname]'s volume of wellmade shoes
-      class:energy
+      name: [%teamname] wellmade shoes
+      hidden
+      class:[%teamid]profile
       on start:
         start with:50
       end
@@ -139,8 +224,9 @@ Includes
         end
       end
     *[%teamid]handsitemsgq
-      name: [%teamname]'s volume of wellmade gloves
-      class:energy
+      name: [%teamname] wellmade gloves
+      hidden
+      class:[%teamid]profile
       on start:
         start with:50
       end
@@ -150,6 +236,7 @@ Includes
         end
       end
     *[%teamid]health
+      hidden
       //name: [%teamname]
       on start:
         start with:[%health]
@@ -167,10 +254,12 @@ Includes
         end
       end
     *[%teamid]dead
+      hidden
       on start:
         start with:0
       end
     *[%teamid]lives
+      hidden
       on start:
         start with:[%lives]
       end
@@ -187,26 +276,32 @@ Includes
         end
       end
     *[%teamid]maxhealth
+      hidden
       on start:
         start with:[%maxhealth]
       end
     *[%teamid]healthboost
+      hidden
       on start:
         start with:[%healthboost]
       end
     *[%teamid]healthloss
+      hidden
       on start:
         start with:[%healthloss]
       end
     *[%teamid]clickcost
+      hidden
       on start:
         start with:[%clickcost]
       end
     *[%teamid]sparkle
+      hidden
       on start:
         start with:[%sparkle]
       end
     *[%teamid]clickcount
+      hidden
       on start:
         start with:0
       end
@@ -215,8 +310,9 @@ Includes
     *[%teamid]button
       name:[%teamname]
       desc:Click [%teamname] to generate Sparks, costs Energy
-      class:[%teamid] team
+      class:[%teamid]
       icon:https://static.thenounproject.com/png/788246-200.png
+      icon class:teamicon
       tooltip origin:bottom
       tooltip class:red
       text:[%teamname] <//>(LIVES = [[%teamid]lives])<//>(HP = [[%teamid]health]/[[%teamid]maxhealth])
@@ -308,19 +404,47 @@ Includes
 
     // example [i:cndtoggevent %acondition="team1health<=50" %bcondition="team1health>50" %eventname="cndtoggevent1" %aaction="yield 100 energy" %baction="yield 200 sparks"]
 
+  *include makeround %roundnumber %dancetime %breaktime
+    on tick:
+      if (roundnumber=[%roundnumber])
+        if (breaktime=[%breaktime])
+          dancingon=1
+          yield 1 roundnumber
+        else if (dancetime=[%dancetime])
+          dancingon=0
+        else
+          //
+        end
+      end
+    end
+
   *include startbutton %text
     *startbutton
       name:[%text]
       desc:Click to begin.
       icon:https://static.thenounproject.com/png/3134226-200.png
-      class:team2
+      class:startbutton
+      icon class:startbuttonicon
       hidden
       on click:
         startgame is 1
         paused is 0
         hide this
-        gain sword
+        roundnumber is 1
+        dancingon is 1
       end
+
+  *include otherplayer %username %timeon %timeoff %engagement %favteamid="100%"
+    on tick:
+      if (eventtime>=[%timeon] and eventtime<[%timeoff])
+      if (eventtime%[%repeattime]=0)
+        if (chance([%prob])=1)
+          log [%eventname] [%amessage]
+        else
+          log [%eventname] [%bmessage]
+        end
+      end
+    end
 
 Resources
 
@@ -335,12 +459,48 @@ Resources
 
     // !! put all scheduled events here //
 
+    [i:makeround %roundnumber="1" %dancetime="20" %breaktime="20"]
+    [i:makeround %roundnumber="2" %dancetime="10" %breaktime="10"]
+    [i:makeround %roundnumber="3" %dancetime="20" %breaktime="20"]
+
     [i:schedevent %schedtime="2" %eventname="SYSTEM:" %amessage="<b>Welcome to DIGIDAMARA!</b>" %bmessage="<b>Welcome back to DIGIDAMARA!</b>" %prob="50%"]
     [i:schedevent %schedtime="4" %eventname="SYSTEM:" %amessage="Thanks for being here!"]
     [i:schedevent %schedtime="6" %eventname="SYSTEM:" %amessage="Click the start game button to begin!"]
     [i:reveal %schedtime="6" %item="startbutton"]
     [i:pause %schedtime="6"]
     [i:schedevent %schedtime="9" %eventname="Unpaused" %amessage="Unpaused!"]
+
+  *roundnumber
+
+
+  *dancingon
+
+  *dancetime
+    on tick:
+      if (dancingon=1 and paused=0 and startgame=1)
+        yield 1 this
+        $roundnum=roundnumber
+        if (dancetime=1)
+          toast Round [$roundnum] - Dance Time!
+        end
+      else
+        this is 0
+      end
+    end
+
+  *breaktime
+    on tick:
+      if (dancingon=0 and paused=0 and startgame=1)
+        yield 1 this
+        $roundnum=roundnumber
+        if (breaktime=1)
+          toast Round [$roundnum] - Break Time!
+        end
+      else
+        this is 0
+      end
+    end
+
 
 // conditionals
 
@@ -385,6 +545,13 @@ Resources
     name:Spark|Sparks
     desc:Dancers at the end of the universe generate this!
     class:sparks
+
+
+Upgrades
+  [i:teamprofile %teamid="team1" %teamname="Team One" %description="Them. Alpha = 1, Beta = 3, Gamma = 10"]
+  [i:teamprofile %teamid="team2" %teamname="Team Two" %description="This. Alpha = 1, Beta = 3, Gamma = 10"]
+  [i:teamprofile %teamid="team3" %teamname="Team Three" %description="That. Alpha = 1, Beta = 3, Gamma = 10"]
+
 
 Buttons
 
