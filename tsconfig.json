@@ -15,7 +15,9 @@
     "isolatedModules": true,
     "noEmit": true,
     "typeRoots": ["./node_modules/phaser/types"],
-    "types": ["Phaser"]
+    "types": ["Phaser"],
+    "jsx": "react",
+    "noImplicitAny": false
   },
   "include": ["./src/**/*"]
 }
