@@ -50,11 +50,32 @@ export default class CSSTestScene extends Phaser.Scene
         textObject.destroy();
     }
 
+    async function initializeChat(socket) {
+
+      socket.onchannelmessage = (message) => {
+        console.log("Received a message on channel: %o", message.channel_id);
+        console.log("Message content: %o", message.content);
+      };
+
+      const roomname = "PublicChat";
+      const persistence = true;
+      const hidden = false;
+
+      // 1 = Room, 2 = Direct Message, 3 = Group
+      console.log("About to join chat");
+      const response = await socket.joinChat(1, roomname, persistence, hidden);
+
+      console.log("Now connected to channel id: '%o'", response.channel.id);      
+    }
+
     async function connectToServer(session)
     {
       var socket = client.createSocket();
-      session = await socket.connect(session);
+      session = await socket.connect(session, true);
       console.info("Socket connected.");
+
+      await initializeChat(socket);
+      console.info("Chat initialized.");
     }
 
     async function authenticatePlayer(email, password)
@@ -62,7 +83,7 @@ export default class CSSTestScene extends Phaser.Scene
       const session = await client.authenticateEmail(email, password, true);
 
       console.log('session Created ' + session.created);
-      console.log('session AuthToken ' + session.auth_token);
+      console.log('session Token ' + session.token);
       console.log('session UserId ' + session.user_id);
       console.log('session Username ' + session.username);
 
@@ -96,8 +117,10 @@ export default class CSSTestScene extends Phaser.Scene
 
       connectToServer(session);
 
+      /*
       const response = await client.rpc(session, "healthcheck", {});
       console.log(response.payload);
+      */
     }
 
     let { width, height } = this.sys.game.canvas
